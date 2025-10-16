@@ -38,9 +38,9 @@
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="bg-stonebg-50 text-slate-800">
+<body class="bg-stonebg-50 text-slate-800 pb-24 md:pb-0">
   <!-- Language Toggle (to English) -->
-  <div class="fixed top-[calc(env(safe-area-inset-top)+12px)] right-4 z-[100] pointer-events-auto max-w-[220px] text-right leading-snug">
+  <div class="hidden md:block fixed top-[calc(env(safe-area-inset-top)+12px)] right-4 z-[100] pointer-events-auto max-w-[220px] text-right leading-snug">
     <a href="/"
        class="font-bold text-base md:text-lg bg-gradient-to-r from-[#0ea5a4] to-[#eab308] bg-clip-text text-transparent hover:opacity-90 transition">
       Back to English
@@ -343,9 +343,9 @@
         <p class="mt-1 text-brand-200">Bones • Joints • Rehab</p>
       </div>
       <nav class="grid gap-2 text-brand-200">
-        <a href="#services" class="hover:text-white">Orthopaedic Services</a>
-        <a href="#physio" class="hover:text-white">Physiotherapy Services</a>
-        <a href="#book" class="hover:text-white">Appointments</a>
+        <a href="#services" class="hover:text-white">ಅಸ್ಥಿ ಚಿಕಿತ್ಸೆಗಳು</a>
+        <a href="#physio" class="hover:text-white">ಭೌತಿಕ ಚಿಕಿತ್ಸೆಗಳು</a>
+        <a href="#book" class="hover:text-white">ಅಪಾಯಿಂಟ್ಮೆಂಟ್ ಬುಕ್</a>
         <a href="/" class="hover:text-white">English</a>
       </nav>
       <div class="grid gap-3">
@@ -374,7 +374,7 @@
 
   <!-- Floating WhatsApp Button -->
   <a href="https://wa.me/919999999999" target="_blank"
-     class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 p-4 rounded-full shadow-lg hover:shadow-xl transition"
+     class="hidden md:inline-flex fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 p-4 rounded-full shadow-lg hover:shadow-xl transition"
      style="background-color:#25D366;">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor">
       <path d="M12 2C6.48 2 2 6.05 2 11.1c0 1.86.53 3.58 1.45 5.05L2 22l6.1-1.92A10.6 10.6 0 0012 20.2c5.52 0 10-4.05 10-9.1S17.52 2 12 2zm0 16.8c-1.56 0-3.05-.43-4.36-1.24l-.31-.19-3.62 1.14 1.18-3.48-.21-.33a8.12 8.12 0 01-1.27-4.19c0-4.24 3.67-7.7 8.18-7.7s8.18 3.46 8.18 7.7-3.67 7.7-8.18 7.7z"/><path d="M17.12 13.76c-.28-.14-1.67-.82-1.93-.91-.26-.09-.45-.14-.64.14s-.74.91-.9 1.1c-.17.19-.33.21-.61.07-.28-.14-1.17-.43-2.23-1.38-.82-.74-1.38-1.64-1.55-1.92-.17-.28-.02-.43.13-.57.13-.12.28-.33.42-.5.14-.17.19-.28.28-.47.09-.19.04-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36s-.99.97-.99 2.36.99 2.74 1.13 2.93c.14.19 1.95 3.18 4.73 4.34.66.29 1.18.46 1.58.59.66.21 1.26.18 1.74.11.53-.08 1.67-.68 1.9-1.33.24-.65.24-1.21.17-1.33-.07-.12-.25-.19-.53-.33z"/>
