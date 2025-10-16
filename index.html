@@ -184,25 +184,140 @@
     <div class="rounded-[2rem] bg-white border border-slate-200 p-6 md:p-10 shadow-lift">
       <h2 class="text-2xl md:text-3xl font-extrabold">Book an Appointment</h2>
       <p class="mt-2 text-slate-600">Please submit your details — our team will call back.</p>
-       <form class="mt-6 grid gap-4" action="https://formspree.io/f/manpavkj" method="POST">
-        <form class="mt-6 grid gap-4" action="#" method="POST">
+       <form id="apptForm" class="mt-6 grid gap-4" action="https://formspree.io/f/manpavkj" method="POST" novalidate>
         <div class="grid md:grid-cols-2 gap-4">
-          <label class="grid gap-1"><span class="text-sm font-medium">Full Name</span><input required name="name" type="text" class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600" placeholder="Your name" /></label>
-          <label class="grid gap-1"><span class="text-sm font-medium">Phone</span><input required name="phone" type="tel" class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600" placeholder="+91" /></label>
+          <label class="grid gap-1">
+            <span class="text-sm font-medium">Full Name</span>
+            <input required name="name" type="text"
+                  class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600"
+                  placeholder="Your name" />
+          </label>
+
+          <label class="grid gap-1">
+            <span class="text-sm font-medium">Phone</span>
+            <input required name="phone" id="phone"
+                  inputmode="tel" autocomplete="tel"
+                  class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600"
+                  placeholder="+91 9XXXXXXXXX or 08192-XXXXXX" />
+            <small id="phoneHelp" class="text-slate-500">Accepts +91, 10-digit mobile, or 0-STD landline.</small>
+            <p id="phoneError" class="hidden text-red-600 text-sm mt-1">
+              Enter a valid Indian mobile (10 digits starting 6–9) or landline (0 + STD + number).
+            </p>
+          </label>
         </div>
+
         <div class="grid md:grid-cols-2 gap-4">
-          <label class="grid gap-1"><span class="text-sm font-medium">Visit Type</span>
+          <label class="grid gap-1">
+            <span class="text-sm font-medium">Visit Type</span>
             <select name="visit" class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600">
               <option>Orthopaedic Consultation</option>
               <option>Physiotherapy</option>
-              <option>X‑ray</option>
+              <option>X-ray</option>
             </select>
           </label>
-          <label class="grid gap-1"><span class="text-sm font-medium">Preferred Date</span><input name="date" type="date" class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600"/></label>
+
+          <label class="grid gap-1">
+            <span class="text-sm font-medium">Preferred Date</span>
+            <input required name="date" id="date" type="date"
+                  class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600" />
+            <p id="dateError" class="hidden text-red-600 text-sm mt-1">
+              Please choose today or a future date.
+            </p>
+          </label>
         </div>
-        <label class="grid gap-1"><span class="text-sm font-medium">Message</span><textarea name="message" rows="4" class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600" placeholder="Briefly describe your concern"></textarea></label>
-        <button class="mt-2 inline-flex items-center justify-center gap-2 bg-brand-700 text-white px-6 py-3 rounded-xl2 font-semibold hover:bg-brand-800">Submit</button>
+
+        <label class="grid gap-1">
+          <span class="text-sm font-medium">Message</span>
+          <textarea name="message" rows="4"
+                    class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600"
+                    placeholder="Briefly describe your concern"></textarea>
+        </label>
+
+        <button class="mt-2 inline-flex items-center justify-center gap-2 bg-brand-700 text-white px-6 py-3 rounded-xl2 font-semibold hover:bg-brand-800">
+          Submit
+        </button>
       </form>
+
+      <script>
+        // Set min date to today
+        (function setMinDate() {
+          const date = document.getElementById('date');
+          const t = new Date();
+          const pad = n => String(n).padStart(2,'0');
+          date.min = `${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}`;
+        })();
+
+        // Indian phone validation
+        function isValidIndianPhone(input) {
+          const raw = String(input || '');
+          const digits = raw.replace(/\D/g,'');
+          // reject too short or all same digit (e.g., 0000000000)
+          if (digits.length < 10 || /^(\d)\1+$/.test(digits)) return false;
+
+          // Mobile: allow +91/91/0 prefixes; final 10 digits must start 6-9
+          let d = digits;
+          if (d.length === 12 && d.startsWith('91')) d = d.slice(2);
+          if (d.length === 11 && d.startsWith('0')) d = d.slice(1);
+          if (d.length === 10 && /^[6-9]\d{9}$/.test(d)) return true;
+
+          // Landline: 0 + STD (2–4) + number (6–8) => total 11–12 digits
+          if (/^0\d{10,11}$/.test(digits)) return true;
+
+          return false;
+        }
+
+        // Wire up validation
+        (function wireValidation() {
+          const form = document.getElementById('apptForm');
+          const phone = document.getElementById('phone');
+          const phoneErr = document.getElementById('phoneError');
+          const date = document.getElementById('date');
+          const dateErr = document.getElementById('dateError');
+
+          const show = el => el.classList.remove('hidden');
+          const hide = el => el.classList.add('hidden');
+
+          function validatePhoneField() {
+            const ok = isValidIndianPhone(phone.value);
+            if (!ok) {
+              show(phoneErr);
+              phone.classList.add('border-red-500','focus:border-red-600','focus:ring-red-600');
+            } else {
+              hide(phoneErr);
+              phone.classList.remove('border-red-500','focus:border-red-600','focus:ring-red-600');
+            }
+            return ok;
+          }
+
+          function validateDateField() {
+            if (!date.value) { show(dateErr); return false; }
+            const selected = new Date(date.value+'T00:00:00');
+            const today = new Date(); today.setHours(0,0,0,0);
+            const ok = selected >= today;
+            if (!ok) {
+              show(dateErr);
+              date.classList.add('border-red-500','focus:border-red-600','focus:ring-red-600');
+            } else {
+              hide(dateErr);
+              date.classList.remove('border-red-500','focus:border-red-600','focus:ring-red-600');
+            }
+            return ok;
+          }
+
+          phone.addEventListener('input', validatePhoneField);
+          date.addEventListener('change', validateDateField);
+
+          form.addEventListener('submit', e => {
+            const okPhone = validatePhoneField();
+            const okDate = validateDateField();
+            if (!(okPhone && okDate)) {
+              e.preventDefault(); // block submit to Formspree
+              if (!okPhone) phone.focus();
+              else date.focus();
+            }
+          });
+        })();
+      </script>
     </div>
   </section>
 
