@@ -41,9 +41,9 @@
 </head>
 <body class="bg-stonebg-50 text-slate-800 pb-24 md:pb-0">
   <!-- Kannada Language Toggle (fixed) -->
-  <div class="hidden md:block fixed top-[calc(env(safe-area-inset-top)+12px)] right-4 z-[100] pointer-events-auto max-w-[220px] text-right leading-snug">
+  <div class="block md:fixed md:top-[calc(env(safe-area-inset-top)+12px)] md:right-4 md:z-[100] pointer-events-auto max-w-[220px] text-right leading-snug px-4 md:px-0 mt-2 md:mt-0">
     <a href="/kn/"
-       class="font-bold text-base md:text-lg bg-gradient-to-r from-[#0ea5a4] to-[#eab308] bg-clip-text text-transparent hover:opacity-90 transition">
+      class="inline-block text-sm md:text-base font-bold bg-gradient-to-r from-[#0ea5a4] to-[#eab308] bg-clip-text text-transparent hover:opacity-90 transition">
       ಕನ್ನಡದಲ್ಲಿ ವ್ಯವಹರಿಸಲು ಇಲ್ಲಿ ಒತ್ತಿ
     </a>
   </div>
@@ -64,12 +64,12 @@
       </div>
 
       <!-- Navigation below title -->
-      <nav class="mt-3 text-sm font-semibold text-slate-700">
-        <div class="grid grid-cols-2 gap-2 sm:grid-cols-4 md:flex md:flex-wrap md:justify-between md:items-center">
-          <a href="#services" class="px-4 py-2 rounded-xl2 bg-accent-50 text-brand-800 hover:bg-accent-100 hover:text-brand-900 text-center transition">Orthopaedic Services</a>
-          <a href="#physio"   class="px-4 py-2 rounded-xl2 bg-accent-50 text-brand-800 hover:bg-accent-100 hover:text-brand-900 text-center transition">Physiotherapy Services</a>
-          <a href="#contact"  class="px-4 py-2 rounded-xl2 bg-accent-50 text-brand-800 hover:bg-accent-100 hover:text-brand-900 text-center transition">Contact</a>
-          <a href="#book"     class="px-4 py-2 rounded-xl2 bg-accent-50 text-brand-800 hover:bg-accent-100 hover:text-brand-900 text-center transition">Book Appointment</a>
+      <nav class="mt-4 text-base md:text-lg font-bold text-slate-800">
+        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4 md:flex md:flex-wrap md:justify-between md:items-center">
+          <a href="#services" class="px-6 py-3 rounded-xl2 bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 shadow-sm hover:from-accent-200 hover:to-accent-100 hover:shadow-md transition text-center"> Orthopaedic Services </a>
+          <a href="#physio" class="px-6 py-3 rounded-xl2 bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 shadow-sm hover:from-accent-200 hover:to-accent-100 hover:shadow-md transition text-center"> Physiotherapy Services </a>
+          <a href="#contact" class="px-6 py-3 rounded-xl2 bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 shadow-sm hover:from-accent-200 hover:to-accent-100 hover:shadow-md transition text-center"> Contact </a>
+          <a href="#book" class="px-6 py-3 rounded-xl2 bg-gradient-to-r from-brand-100 to-brand-50 text-brand-900 shadow-sm hover:from-brand-200 hover:to-brand-100 hover:shadow-md transition text-center"> Book Appointment </a>
         </div>
       </nav>
   </header>
@@ -324,10 +324,10 @@
       <div class="rounded-2xl bg-white border border-slate-200 p-6">
         <h3 class="text-xl font-extrabold">Contact</h3>
         <ul class="mt-4 grid gap-3 text-slate-700">
-          <li class="flex gap-3"><span class="mt-0.5">📍</span> <span id="address">Near [Landmark], [Area], Davanagere - 577XXX</span></li>
-          <li class="flex gap-3"><span>📞</span> <a class="underline decoration-brand-300 underline-offset-4" id="phone1" href="tel:+919999999999">+91 99999 99999</a> · <a class="underline decoration-brand-300 underline-offset-4" id="phone2" href="tel:08192000000">08192-000000</a></li>
+          <li class="flex gap-3"><span class="mt-0.5">📍</span> <span id="address">282/3, 4th main, 9th cross, beside Suchetana Hospital, P.J extension, Davanagere - 577002</span></li>
+          <li class="flex gap-3"><span>📞</span> <a class="underline decoration-brand-300 underline-offset-4" id="phone1" href="tel:+917204493794">+917204493794</a>
           <li class="flex gap-3"><span>✉️</span> <a class="underline decoration-brand-300 underline-offset-4" id="email" href="mailto:care@banashreeortho.com">care@banashreeortho.com</a></li>
-          <li class="flex gap-3"><span>🕒</span> OPD: 9am–7pm • X‑ray & Physio: 10am–6pm</li>
+          <li class="flex gap-3"><span>🕒</span> Orthopaedics: 12pm-2pm & 6pm-9pm • X‑ray & Physio: 10am–6pm</li>
         </ul>
       </div>
       <div class="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-lift">
@@ -366,15 +366,15 @@
   <div class="fixed inset-x-0 bottom-0 z-50 md:hidden bg-white/95 backdrop-blur border-t border-slate-200">
     <div class="container mx-auto px-4 py-3 grid grid-cols-3 gap-3">
       <a href="#book" class="inline-flex items-center justify-center rounded-xl2 bg-brand-700 text-white py-2">Book</a>
-      <a id="cta-call" href="tel:+919999999999" class="inline-flex items-center justify-center rounded-xl2 border border-slate-300">Call</a>
-      <a id="cta-wa" href="https://wa.me/919999999999" class="inline-flex items-center justify-center rounded-xl2 border border-slate-300">WhatsApp</a>
+      <a id="cta-call" href="tel:+917204493794" class="inline-flex items-center justify-center rounded-xl2 border border-slate-300">Call</a>
+      <a id="cta-wa" href="https://wa.me/917204493794" class="inline-flex items-center justify-center rounded-xl2 border border-slate-300">WhatsApp</a>
     </div>
   </div>
 
   <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/919999999999" target="_blank"
+  <a href="https://wa.me/917204493794" target="_blank"
      class="hidden md:inline-flex fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 p-4 rounded-full shadow-lg hover:shadow-xl transition"
      style="background-color:#25D366;">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor">
