@@ -1,25 +1,85 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Banashree Ortho & Trauma Care | Davanagere</title>
-  <meta name="description" content="Banashree Ortho & Trauma Care — dedicated orthopaedic nursing home in Davanagere offering fracture care, joint pain management, physiotherapy, digital X‑ray, and in‑house medical shop." />
+  <meta name="description"
+    content="Banashree Ortho & Trauma Care — dedicated orthopaedic nursing home in Davanagere offering fracture care, joint pain management, physiotherapy, digital X‑ray, and in‑house medical shop." />
+  <style>
+    /* header + pill bar height for most sections */
+    :root {
+      --stick-height: 4rem;
+      /* tweak 4.9 → 5.1 if needed */
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--stick-height);
+    }
+
+    /* for normal sections (services, physio, contact, book) */
+    .scroll-tight {
+      scroll-margin-top: var(--stick-height);
+    }
+
+    /* hero needs a bit more so photo isn't cut */
+    .scroll-hero {
+      scroll-margin-top: calc(var(--stick-height) + 1.4rem);
+    }
+
+    @media (min-width: 1024px) {
+      :root {
+        --stick-height: 5.1rem;
+      }
+    }
+  </style>
+  <style>
+    /* make all section anchors stop below sticky header */
+    #about,
+    #services,
+    #physio,
+    #why,
+    #book,
+    #contact {
+      scroll-margin-top: 4rem;
+    }
+  </style>
+  <style>
+    /* consistent vertical spacing between all main sections */
+    section {
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
+    }
+
+    /* keep hero section slightly tighter at top */
+    #about {
+      padding-top: 2rem !important;
+    }
+
+    /* ensure "Why Choose Us" doesn’t double up bottom gap */
+    #why,
+    .why-choose {
+      margin-top: 0 !important;
+    }
+  </style>
 
   <!-- Fonts & Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Plus Jakarta Sans','ui-sans-serif','system-ui','sans-serif'] },
+          fontFamily: { sans: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
           colors: {
-            brand: { 950:'#042f2e',900:'#064e3b',800:'#0f4f47',700:'#0f766e',600:'#0ea5a4',500:'#14b8a6',400:'#2dd4bf',300:'#5eead4',200:'#99f6e4',100:'#ccfbf1',50:'#ecfeff' },
-            accent:{ 900:'#7a3b06',800:'#8a4b0a',700:'#a16207',600:'#ca8a04',500:'#eab308',400:'#facc15',300:'#fde047',200:'#fef08a',100:'#fef9c3',50:'#fffbeb' },
-            stonebg:{ 50:'#f7f8f9',100:'#f1f5f4' }
+            brand: { 950: '#042f2e', 900: '#064e3b', 800: '#0f4f47', 700: '#0f766e', 600: '#0ea5a4', 500: '#14b8a6', 400: '#2dd4bf', 300: '#5eead4', 200: '#99f6e4', 100: '#ccfbf1', 50: '#ecfeff' },
+            accent: { 900: '#7a3b06', 800: '#8a4b0a', 700: '#a16207', 600: '#ca8a04', 500: '#eab308', 400: '#facc15', 300: '#fde047', 200: '#fef08a', 100: '#fef9c3', 50: '#fffbeb' },
+            stonebg: { 50: '#f7f8f9', 100: '#f1f5f4' }
           },
           boxShadow: { lift: '0 14px 40px rgba(4,47,46,0.12)' },
           borderRadius: { xl2: '1.25rem' }
@@ -28,358 +88,497 @@
     }
   </script>
   <style>
-    body{ text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased }
-    .container{ max-width: 1120px }
+    body {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased
+    }
+
+    .container {
+      max-width: 1120px
+    }
+
     /* Subtle dotted background */
     .bg-dots {
-      background-image: radial-gradient(rgba(14,165,164,0.12) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(14, 165, 164, 0.12) 1px, transparent 1px);
       background-size: 22px 22px;
       background-position: 0 0;
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body class="bg-stonebg-50 text-slate-800 pb-24 md:pb-0">
-  <!-- Kannada Language Toggle (fixed) -->
-  <div class="block md:fixed md:top-[calc(env(safe-area-inset-top)+12px)] md:right-4 md:z-[100] pointer-events-auto max-w-[220px] text-right leading-snug px-4 md:px-0 mt-2 md:mt-0">
-    <a href="/kn/"
-      class="inline-block text-sm md:text-base font-bold bg-gradient-to-r from-[#0ea5a4] to-[#eab308] bg-clip-text text-transparent hover:opacity-90 transition">
-      ಕನ್ನಡದಲ್ಲಿ ವ್ಯವಹರಿಸಲು ಇಲ್ಲಿ ಒತ್ತಿ
-    </a>
-  </div>
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-    <div class="container mx-auto px-4 py-3">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+</head>
+
+<body class="bg-stonebg-50 text-slate-800 pb-24 md:pb-0">
+
+  <body class="bg-stonebg-50 text-slate-800 pb-24 md:pb-0">
+
+    <!-- TOP BAR: stays on screen -->
+    <div class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+      <!-- header row -->
+      <header class="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
+        <!-- left: logo + name -->
         <div class="flex items-center gap-3">
-          <img src="assets/img/banashree_logo.png" alt="Banashree Ortho & Trauma logo" class="h-14 w-auto">
+          <img src="assets/img/banashree_logo.png" alt="Banashree Ortho & Trauma Care"
+            class="h-10 w-10 rounded-md object-contain">
           <div>
-            <p class="text-3xl md:text-4xl leading-tight font-extrabold tracking-tight text-brand-800 notranslate">
+            <h1 class="text-2xl md:text-3xl font-extrabold text-brand-900 leading-tight">
               Banashree Ortho & Trauma Care
-            </p>
-            <p class="text-sm font-semibold text-slate-600">Davanagere, Karnataka</p>
+            </h1>
+            <p class="text-sm md:text-lg text-slate-500 -mt-1">Davanagere, Karnataka</p>
+          </div>
+        </div>
+
+        <!-- right: Kannada link + mobile menu -->
+        <div class="flex items-center gap-3">
+          <a href="/kn/"
+            class="hidden md:inline-block text-sm md:text-base font-bold bg-gradient-to-r from-[#0ea5a4] to-[#eab308] bg-clip-text text-transparent">
+            ಕನ್ನಡದಲ್ಲಿ ವ್ಯವಹರಿಸಲು ಇಲ್ಲಿ ಒತ್ತಿ
+          </a>
+
+          <!-- mobile button -->
+          <button id="mobile-menu-btn"
+            class="md:hidden inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-200 text-brand-900 font-semibold shadow-sm border border-amber-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <span>Menu</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- desktop pills -->
+      <nav class="hidden md:block">
+        <div class="container mx-auto px-4 pb-2">
+          <div class="flex gap-3 justify-between items-center">
+            <a href="#about"
+              class="flex-1 text-center px-3 py-2 rounded-[1.3rem] bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 text-[0.95rem] font-bold shadow-sm hover:shadow-md transition">
+              About Us
+            </a>
+            <a href="#services"
+              class="flex-1 text-center px-3 py-2 rounded-[1.3rem] bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 text-[0.95rem] font-bold shadow-sm hover:shadow-md transition">
+              Orthopaedic Services
+            </a>
+            <a href="#physio"
+              class="flex-[1.15] text-center px-3 py-2 rounded-[1.3rem] bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 text-[0.95rem] font-bold shadow-sm hover:shadow-md transition whitespace-nowrap">
+              Physiotherapy Services
+            </a>
+
+            <a href="#why"
+              class="flex-1 text-center px-3 py-2 rounded-[1.3rem] bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 text-[0.95rem] font-bold shadow-sm hover:shadow-md transition">
+              Why Choose Us
+            </a>
+            <a href="#contact"
+              class="flex-1 text-center px-3 py-2 rounded-[1.3rem] bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 text-[0.95rem] font-bold shadow-sm hover:shadow-md transition">
+              Contact
+            </a>
+            <a href="#book"
+              class="flex-1 text-center px-3 py-2 rounded-[1.3rem] bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 text-[0.95rem] font-bold shadow-sm hover:shadow-md transition">
+              Book Appointment
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- mobile dropdown -->
+      <nav id="mobile-menu" class="md:hidden hidden border-t border-slate-200 bg-white/95 backdrop-blur">
+        <div class="px-4 py-3 flex flex-col gap-2">
+          <a href="#about" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">About Us</a>
+          <a href="#services" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">Orthopaedic
+            Services</a>
+          <a href="#physio" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">Physiotherapy
+            Services</a>
+          <a href="#contact" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">Contact</a>
+          <a href="#book" class="block px-4 py-2 rounded-lg bg-teal-50 text-brand-900 font-semibold">Book
+            Appointment</a>
+        </div>
+      </nav>
+    </div>
+
+
+    <!-- mobile: highlighted menu button -->
+    <button id="mobile-menu-btn"
+      class="md:hidden inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-200 text-brand-900 font-semibold shadow-sm border border-amber-300">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+      <span>Menu</span>
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+      </span>
+    </button>
+    </div>
+
+
+    <!-- mobile dropdown nav (hidden by default) -->
+    <nav id="mobile-menu" class="md:hidden hidden border-t border-slate-200 bg-white/95 backdrop-blur">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="#about" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">About Us</a>
+        <a href="#services" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">Orthopaedic
+          Services</a>
+        <a href="#physio" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">Physiotherapy
+          Services</a>
+        <a href="#contact" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">Contact</a>
+        <a href="#book" class="block px-4 py-2 rounded-lg bg-teal-50 text-brand-900 font-semibold">Book
+          Appointment</a>
+      </div>
+    </nav>
+    </header>
+
+
+
+
+
+    <!-- Hero / Doctor Introduction -->
+    <section id="about" class="scroll-hero relative bg-white">
+      <div class="absolute inset-x-0 -top-8 h-20 bg-gradient-to-b from-brand-50 to-transparent pointer-events-none">
+      </div>
+      <div class="container mx-auto px-4 py-8 grid lg:grid-cols-2 gap-10 items-center">
+
+        <!-- Left side: Doctor intro -->
+        <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+          <img src="assets/img/dr.shivashankarappa.png" alt="Dr. Shivashankarappa, Orthopaedic Specialist"
+            class="h-48 w-48 rounded-full shadow-lift ring-2 ring-brand-100 mb-6 object-cover">
+          <h1 class="text-2xl md:text-3xl font-extrabold leading-tight text-brand-900">
+            Dr. Shivashankarappa
+          </h1>
+          <p class="text-slate-600 font-medium">Founder & Chief Orthopaedic Surgeon</p>
+          <p class="mt-4 text-lg text-slate-700 max-w-xl">
+            “At <span class="font-semibold text-brand-800">Banashree Ortho & Trauma Centre</span>,
+            we’re dedicated to delivering the best orthopaedic and physiotherapy care in Davanagere.
+            With years of trusted expertise and patient-first approach, we ensure every recovery is confident and
+            complete.”
+          </p>
+        </div>
+
+        <!-- Right side: Hospital image (same as before) -->
+        <div class="relative">
+          <div class="rounded-[2rem] overflow-hidden ring-1 ring-slate-200 shadow-lift">
+            <img src="assets/img/hospital_building.jpg" alt="Banashree Ortho Hospital Building"
+              class="w-full h-[380px] object-contain object-center bg-white p-2 rounded-[1.5rem]" loading="eager">
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Navigation below title -->
-      <nav class="mt-4 text-base md:text-lg font-bold text-slate-800">
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4 md:flex md:flex-wrap md:justify-between md:items-center">
-          <a href="#services" class="px-6 py-3 rounded-xl2 bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 shadow-sm hover:from-accent-200 hover:to-accent-100 hover:shadow-md transition text-center"> Orthopaedic Services </a>
-          <a href="#physio" class="px-6 py-3 rounded-xl2 bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 shadow-sm hover:from-accent-200 hover:to-accent-100 hover:shadow-md transition text-center"> Physiotherapy Services </a>
-          <a href="#contact" class="px-6 py-3 rounded-xl2 bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 shadow-sm hover:from-accent-200 hover:to-accent-100 hover:shadow-md transition text-center"> Contact </a>
-          <a href="#book" class="px-6 py-3 rounded-xl2 bg-gradient-to-r from-brand-100 to-brand-50 text-brand-900 shadow-sm hover:from-brand-200 hover:to-brand-100 hover:shadow-md transition text-center"> Book Appointment </a>
+    <!-- Orthopaedic Services -->
+    <section class="bg-white">
+      <div id="services" class="scroll-tight container mx-auto px-4 py-5">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900">Orthopaedic Services</h2>
+        <p class="mt-2 text-slate-600 max-w-2xl">
+          Dedicated orthopaedic nursing home with essential in-house facilities for end-to-end care.
+        </p>
+
+        <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-700">
+          <ul class="list-disc list-inside space-y-2">
+            <li>Orthopaedic OPD & Minor Procedures</li>
+            <li>Fracture Care & Plaster / POP</li>
+            <li>Joint Pain & Arthritis Clinic</li>
+            <li>Post-operative Follow-up Care</li>
+          </ul>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Physiotherapy & Rehabilitation</li>
+            <li>Back & Neck Pain Management</li>
+            <li>Sports Injury Assessment</li>
+            <li>Posture & Gait Training</li>
+          </ul>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Digital X-Ray (In-house)</li>
+            <li>Medical Shop / Pharmacy</li>
+            <li>Basic Lab Tie-ups</li>
+            <li>Cashless & TPA Assistance (as applicable)</li>
+          </ul>
         </div>
-      </nav>
-  </header>
-
-  <!-- Hero / Doctor Introduction -->
-<section class="relative bg-dots pt-4">
-  <div class="absolute inset-x-0 -top-8 h-20 bg-gradient-to-b from-brand-50 to-transparent pointer-events-none"></div>
-  <div class="container mx-auto px-4 py-10 grid lg:grid-cols-2 gap-10 items-center">
-    
-    <!-- Left side: Doctor intro -->
-    <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
-      <img src="assets/img/dr.shivashankarappa.png" alt="Dr. Shivashankarappa, Orthopaedic Specialist" class="h-48 w-48 rounded-full shadow-lift ring-2 ring-brand-100 mb-6 object-cover">
-      <h1 class="text-2xl md:text-3xl font-extrabold leading-tight text-brand-900">
-        Dr. Shivashankarappa
-      </h1>
-      <p class="text-slate-600 font-medium">Founder & Chief Orthopaedic Surgeon</p>
-      <p class="mt-4 text-lg text-slate-700 max-w-xl">
-        “At <span class="font-semibold text-brand-800">Banashree Ortho & Trauma Centre</span>, 
-        we’re dedicated to delivering the best orthopaedic and physiotherapy care in Davanagere. 
-        With years of trusted expertise and patient-first approach, we ensure every recovery is confident and complete.”
-      </p>
-    </div>
-
-    <!-- Right side: Hospital image (same as before) -->
-    <div class="relative">
-      <div class="rounded-[2rem] overflow-hidden ring-1 ring-slate-200 shadow-lift">
-        <img src="assets/img/hospital_building.jpg" alt="Banashree Ortho Hospital Building" class="w-full h-[380px] object-contain object-center bg-white p-2 rounded-[1.5rem]" loading="eager">
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Orthopaedic Services -->
-  <section id="services" class="bg-white border-y border-slate-200">
-    <div class="container mx-auto px-4 py-16">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900">Orthopaedic Services</h2>
-      <p class="mt-2 text-slate-600 max-w-2xl">Dedicated orthopaedic nursing home with essential in‑house facilities for end‑to‑end care.</p>
+    <!-- Physiotherapy Services -->
+    <section class="bg-white">
+      <div id="physio" class="scroll-tight container mx-auto px-4 py-5">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900">Physiotherapy Services</h2>
+        <p class="mt-2 text-slate-600 max-w-2xl">
+          Comprehensive rehabilitation and pain management support under one roof, tailored to restore mobility and
+          strength.
+        </p>
 
-      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-700">
-        <ul class="list-disc list-inside space-y-2">
-          <li>Orthopaedic OPD & Minor Procedures</li>
-          <li>Fracture Care & Plaster / POP</li>
-          <li>Joint Pain & Arthritis Clinic</li>
-          <li>Post‑operative Follow‑up Care</li>
-        </ul>
-
-        <ul class="list-disc list-inside space-y-2">
-          <li>Physiotherapy & Rehabilitation</li>
-          <li>Back & Neck Pain Management</li>
-          <li>Sports Injury Assessment</li>
-          <li>Posture & Gait Training</li>
-        </ul>
-
-        <ul class="list-disc list-inside space-y-2">
-          <li>Digital X‑Ray (In‑house)</li>
-          <li>Medical Shop / Pharmacy</li>
-          <li>Basic Lab Tie‑ups</li>
-          <li>Cashless & TPA Assistance (as applicable)</li>
-        </ul>
+        <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-700">
+          <ul class="list-disc list-inside space-y-2">
+            <li>Joint and muscle pain management</li>
+            <li>Post-operative rehabilitation</li>
+            <li>Back and neck pain therapy</li>
+            <li>Sports injury recovery</li>
+          </ul>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Gait and posture correction</li>
+            <li>Strength and conditioning programs</li>
+            <li>Electrotherapy & ultrasound therapy</li>
+            <li>Heat and cold therapy</li>
+          </ul>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Pediatric physiotherapy</li>
+            <li>Neurological rehabilitation</li>
+            <li>Balance and coordination training</li>
+            <li>Home exercise guidance</li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Physiotherapy Services -->
-<section id="physio" class="bg-white border-y border-slate-200">
-  <div class="container mx-auto px-4 py-16">
-    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900">Physiotherapy Services</h2>
-    <p class="mt-2 text-slate-600 max-w-2xl">
-      Comprehensive rehabilitation and pain management support under one roof, tailored to restore mobility and strength.
-    </p>
 
-    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-700">
-      <ul class="list-disc list-inside space-y-2">
-        <li>Joint and muscle pain management</li>
-        <li>Post-operative rehabilitation</li>
-        <li>Back and neck pain therapy</li>
-        <li>Sports injury recovery</li>
-      </ul>
+    <!-- Why Choose Us -->
+    <section id="why" class="container mx-auto px-4 pt-8 pb-10">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900 mb-6">
+        Why Choose Us
+      </h2>
+      <div class="grid md:grid-cols-4 gap-4">
+        <div class="rounded-2xl bg-white border border-slate-200 p-5">
+          <p class="text-2xl font-extrabold text-brand-800">Focused</p>
+          <p class="text-slate-600">Orthopaedics only</p>
+        </div>
+        <div class="rounded-2xl bg-white border border-slate-200 p-5">
+          <p class="text-2xl font-extrabold text-brand-800">In-house</p>
+          <p class="text-slate-600">Physio & X-ray</p>
+        </div>
+        <div class="rounded-2xl bg-white border border-slate-200 p-5">
+          <p class="text-2xl font-extrabold text-brand-800">Accessible</p>
+          <p class="text-slate-600">City-centre location</p>
+        </div>
+        <div class="rounded-2xl bg-white border border-slate-200 p-5">
+          <p class="text-2xl font-extrabold text-brand-800">Care-first</p>
+          <p class="text-slate-600">Patient-centric approach</p>
+        </div>
+      </div>
+    </section>
 
-      <ul class="list-disc list-inside space-y-2">
-        <li>Gait and posture correction</li>
-        <li>Strength and conditioning programs</li>
-        <li>Electrotherapy & ultrasound therapy</li>
-        <li>Heat and cold therapy</li>
-      </ul>
+    <!-- Appointment Form -->
+    <section id="book" class="scroll-mt-32 container mx-auto px-4 pb-16 grid md:grid-cols-2 gap-10 items-start">
+      <div
+        class="max-w-xl rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-lift ring-1 ring-slate-100 p-6 md:p-8">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Book an Appointment</h2>
+        <p class="mt-2 text-slate-600 text-base leading-relaxed"> Leave your details — our coordinator will call back.
+        </p>
+        <div id="appointment-container">
+          <form id="appointment-form" class="mt-6 grid gap-4" action="https://formspree.io/f/xzzjkjpy" method="POST">
+            <div class="grid md:grid-cols-2 gap-x-6 gap-y-4">
+              <label class="grid gap-1">
+                <span class="text-sm font-medium">Full Name</span>
+                <input required name="name" type="text" class="w-full rounded-xl2 border border-slate-300 bg-white/90 px-4 py-2 text-slate-900 placeholder-slate-400
+          focus:border-indigoe-600 focus:ring-indigoe-600" placeholder="Your name" />
+              </label>
 
-      <ul class="list-disc list-inside space-y-2">
-        <li>Pediatric physiotherapy</li>
-        <li>Neurological rehabilitation</li>
-        <li>Balance and coordination training</li>
-        <li>Home exercise guidance</li>
-      </ul>
-    </div>
-  </div>
-</section>
+              <label class="grid gap-1">
+                <span class="text-sm font-medium">Phone</span>
+                <input required name="phone" type="tel" pattern="^[6-9][0-9]{9}$"
+                  title="Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9" class="w-full rounded-xl2 border border-slate-300 bg-white/90 px-4 py-2 text-slate-900 placeholder-slate-400
+          focus:border-indigoe-600 focus:ring-indigoe-600" placeholder="10-digit mobile number" />
+              </label>
+            </div>
 
-  <!-- Why Choose Us -->
-  <section class="container mx-auto px-4 py-16">
-    <div class="grid md:grid-cols-4 gap-6">
-      <div class="rounded-2xl bg-white border border-slate-200 p-6"><p class="text-3xl font-extrabold text-brand-800">Focused</p><p class="text-slate-600">Orthopaedics only</p></div>
-      <div class="rounded-2xl bg-white border border-slate-200 p-6"><p class="text-3xl font-extrabold text-brand-800">In‑house</p><p class="text-slate-600">Physio & X‑ray</p></div>
-      <div class="rounded-2xl bg-white border border-slate-200 p-6"><p class="text-3xl font-extrabold text-brand-800">Accessible</p><p class="text-slate-600">City‑centre location</p></div>
-      <div class="rounded-2xl bg-white border border-slate-200 p-6"><p class="text-3xl font-extrabold text-brand-800">Care‑first</p><p class="text-slate-600">Patient‑centric approach</p></div>
-    </div>
-  </section>
+            <div class="grid md:grid-cols-2 gap-x-6 gap-y-4">
+              <label class="grid gap-1">
+                <span class="text-sm font-medium">Department</span>
+                <select name="department" required class="rounded-xl2 border border-slate-300 bg-white/90 px-4 py-2 text-slate-900 placeholder-slate-400
+          focus:border-indigoe-600 focus:ring-indigoe-600">
+                  <option value="" disabled selected>Select department</option>
+                  <option>Orthopaedic Consultation</option>
+                  <option>Physiotherapy Consultation</option>
+                  <option>X-ray and Others</option>
+                </select>
+              </label>
 
-  <!-- Appointment Form -->
-  <section id="book" class="container mx-auto px-4 pb-16">
-    <div class="rounded-[2rem] bg-white border border-slate-200 p-6 md:p-10 shadow-lift">
-      <h2 class="text-2xl md:text-3xl font-extrabold">Book an Appointment</h2>
-      <p class="mt-2 text-slate-600">Please submit your details — our team will call back.</p>
-       <form id="apptForm" class="mt-6 grid gap-4" action="https://formspree.io/f/manpavkj" method="POST" novalidate>
-        <div class="grid md:grid-cols-2 gap-4">
-          <label class="grid gap-1">
-            <span class="text-sm font-medium">Full Name</span>
-            <input required name="name" type="text"
-                  class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600"
-                  placeholder="Your name" />
-          </label>
+              <label class="grid gap-1">
+                <span class="text-sm font-medium">Preferred Date</span>
+                <input required name="date" type="date" class="rounded-xl2 border border-slate-300 bg-white/90 px-4 py-2 text-slate-900 placeholder-slate-400
+          focus:border-indigoe-600 focus:ring-indigoe-600" />
+              </label>
+            </div>
 
-          <label class="grid gap-1">
-            <span class="text-sm font-medium">Phone</span>
-            <input required name="phone" id="phone"
-                  inputmode="tel" autocomplete="tel"
-                  class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600"
-                  placeholder="+91 9XXXXXXXXX or 08192-XXXXXX" />
-            <small id="phoneHelp" class="text-slate-500">Accepts +91, 10-digit mobile, or 0-STD landline.</small>
-            <p id="phoneError" class="hidden text-red-600 text-sm mt-1">
-              Enter a valid Indian mobile (10 digits starting 6–9) or landline (0 + STD + number).
+            <label class="grid gap-1">
+              <span class="text-sm font-medium">Message</span>
+              <textarea name="message" rows="4" class="rounded-xl2 border border-slate-300 bg-white/90 px-4 py-2 text-slate-900 placeholder-slate-400
+        focus:border-indigoe-600 focus:ring-indigoe-600" placeholder="Briefly describe your concern"></textarea>
+            </label>
+
+            <button
+              class="mt-4 inline-flex items-center justify-center gap-2 bg-brand-700 text-white px-6 py-3 rounded-xl2 font-semibold shadow-md hover:bg-brand-800 hover:shadow-lg transition">
+              Submit
+            </button>
+          </form>
+
+          <!-- Success message (hidden initially) -->
+          <div id="appointment-success" class="hidden text-center py-12">
+            <p class="text-2xl font-bold text-green-700 mb-3">
+              Thank you. Appointment request submitted successfully!
             </p>
-          </label>
+            <p class="text-slate-700 mb-6">
+              Our staff will contact you shortly.
+            </p>
+            <button id="book-again"
+              class="mt-4 inline-flex items-center justify-center gap-2 bg-brand-700 text-white px-6 py-3 rounded-xl2 font-semibold shadow-md hover:bg-brand-800 hover:shadow-lg transition">
+              Book another appointment
+            </button>
+          </div>
+        </div>
+      </div>
+      <div <!-- CONTACT CARD -->
+        <div id="contact"
+          class="scroll-tight rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-lift ring-1 ring-slate-100 p-6 md:p-8 min-h-[530px] flex flex-col">
+          <h3 class="text-2xl md:text-3xl font-extrabold mb-4 text-slate-900">Contact</h3>
+          <ul class="grid gap-4 text-slate-700 text-base">
+            <li class="flex gap-3">
+              <span class="mt-0.5">📍</span>
+              <a href="https://www.google.com/maps?q=282/3,+4th+main,+9th+cross,+beside+Suchetana+Hospital,+P.J+extension,+Davanagere+-+577002"
+                target="_blank" rel="noopener" title="Open in Google Maps"
+                class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700">
+                282/3, 4th main, 9th cross, beside Suchetana Hospital, P.J extension, Davanagere - 577002
+              </a>
+            </li>
+
+            <li class="flex gap-3">
+              <span>📞</span>
+              <a class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700"
+                href="tel:+917204493794">
+                +917204493794
+              </a>
+            </li>
+
+            <li class="flex gap-3">
+              <span>✉️</span>
+              <a class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700"
+                href="mailto:care@banashreeortho.com">
+                care@banashreeortho.com
+              </a>
+            </li>
+
+            <li class="flex gap-3">
+              <span>🕒</span>
+              Orthopaedics: 12pm–2pm & 6pm–9pm • X-ray & Physio: 10am–6pm
+            </li>
+          </ul>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-4">
-          <label class="grid gap-1">
-            <span class="text-sm font-medium">Visit Type</span>
-            <select name="visit" class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600">
-              <option>Orthopaedic Consultation</option>
-              <option>Physiotherapy</option>
-              <option>X-ray</option>
-            </select>
-          </label>
 
-          <label class="grid gap-1">
-            <span class="text-sm font-medium">Preferred Date</span>
-            <input required name="date" id="date" type="date"
-                  class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600" />
-            <p id="dateError" class="hidden text-red-600 text-sm mt-1">
-              Please choose today or a future date.
-            </p>
-          </label>
-        </div>
-
-        <label class="grid gap-1">
-          <span class="text-sm font-medium">Message</span>
-          <textarea name="message" rows="4"
-                    class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600"
-                    placeholder="Briefly describe your concern"></textarea>
-        </label>
-
-        <button class="mt-2 inline-flex items-center justify-center gap-2 bg-brand-700 text-white px-6 py-3 rounded-xl2 font-semibold hover:bg-brand-800">
-          Submit
-        </button>
-      </form>
+      </div>
 
       <script>
-        // Set min date to today
-        (function setMinDate() {
-          const date = document.getElementById('date');
-          const t = new Date();
-          const pad = n => String(n).padStart(2,'0');
-          date.min = `${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}`;
-        })();
-
-        // Indian phone validation
-        function isValidIndianPhone(input) {
-          const raw = String(input || '');
-          const digits = raw.replace(/\D/g,'');
-          // reject too short or all same digit (e.g., 0000000000)
-          if (digits.length < 10 || /^(\d)\1+$/.test(digits)) return false;
-
-          // Mobile: allow +91/91/0 prefixes; final 10 digits must start 6-9
-          let d = digits;
-          if (d.length === 12 && d.startsWith('91')) d = d.slice(2);
-          if (d.length === 11 && d.startsWith('0')) d = d.slice(1);
-          if (d.length === 10 && /^[6-9]\d{9}$/.test(d)) return true;
-
-          // Landline: 0 + STD (2–4) + number (6–8) => total 11–12 digits
-          if (/^0\d{10,11}$/.test(digits)) return true;
-
-          return false;
-        }
-
-        // Wire up validation
-        (function wireValidation() {
-          const form = document.getElementById('apptForm');
-          const phone = document.getElementById('phone');
-          const phoneErr = document.getElementById('phoneError');
-          const date = document.getElementById('date');
-          const dateErr = document.getElementById('dateError');
-
-          const show = el => el.classList.remove('hidden');
-          const hide = el => el.classList.add('hidden');
-
-          function validatePhoneField() {
-            const ok = isValidIndianPhone(phone.value);
-            if (!ok) {
-              show(phoneErr);
-              phone.classList.add('border-red-500','focus:border-red-600','focus:ring-red-600');
-            } else {
-              hide(phoneErr);
-              phone.classList.remove('border-red-500','focus:border-red-600','focus:ring-red-600');
-            }
-            return ok;
-          }
-
-          function validateDateField() {
-            if (!date.value) { show(dateErr); return false; }
-            const selected = new Date(date.value+'T00:00:00');
-            const today = new Date(); today.setHours(0,0,0,0);
-            const ok = selected >= today;
-            if (!ok) {
-              show(dateErr);
-              date.classList.add('border-red-500','focus:border-red-600','focus:ring-red-600');
-            } else {
-              hide(dateErr);
-              date.classList.remove('border-red-500','focus:border-red-600','focus:ring-red-600');
-            }
-            return ok;
-          }
-
-          phone.addEventListener('input', validatePhoneField);
-          date.addEventListener('change', validateDateField);
-
-          form.addEventListener('submit', e => {
-            const okPhone = validatePhoneField();
-            const okDate = validateDateField();
-            if (!(okPhone && okDate)) {
-              e.preventDefault(); // block submit to Formspree
-              if (!okPhone) phone.focus();
-              else date.focus();
-            }
-          });
-        })();
+          (function () {
+            const dateInput = document.querySelector('input[name="date"]');
+            if (!dateInput) return;
+            const today = new Date();
+            const pad = n => String(n).padStart(2, '0');
+            const min = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
+            dateInput.min = min;
+          })();
       </script>
-    </div>
-  </section>
 
-  <!-- Contact & Map -->
-  <section id="contact" class="container mx-auto px-4 pb-24">
-    <div class="grid md:grid-cols-2 gap-10 items-start">
-      <div class="rounded-2xl bg-white border border-slate-200 p-6">
-        <h3 class="text-xl font-extrabold">Contact</h3>
-        <ul class="mt-4 grid gap-3 text-slate-700">
-          <li class="flex gap-3"><span class="mt-0.5">📍</span> <span id="address">282/3, 4th main, 9th cross, beside Suchetana Hospital, P.J extension, Davanagere - 577002</span></li>
-          <li class="flex gap-3"><span>📞</span> <a class="underline decoration-brand-300 underline-offset-4" id="phone1" href="tel:+917204493794">+917204493794</a>
-          <li class="flex gap-3"><span>✉️</span> <a class="underline decoration-brand-300 underline-offset-4" id="email" href="mailto:care@banashreeortho.com">care@banashreeortho.com</a></li>
-          <li class="flex gap-3"><span>🕒</span> Orthopaedics: 12pm-2pm & 6pm-9pm • X‑ray & Physio: 10am–6pm</li>
-        </ul>
-      </div>
-      <div class="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-lift">
-        <iframe title="Google Map" src="https://maps.google.com/maps?q=Davanagere&t=&z=14&ie=UTF8&iwloc=&output=embed" class="w-full h-80"></iframe>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-brand-900 text-white">
-    <div class="container mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
-      <div>
-        <p class="text-xl font-extrabold">Banashree Ortho & Trauma Care</p>
-        <p class="mt-1 text-brand-200">Bones • Joints • Rehab</p>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-white">
+      <div class="container mx-auto px-4 py-8 grid md:grid-cols-3 gap-8">
+        <div>
+          <p class="text-xl font-extrabold">Banashree Ortho & Trauma Care</p>
+          <p class="mt-1 text-brand-200">Bones • Joints • Rehab</p>
+        </div>
+        <nav class="grid gap-2 text-brand-200">
+          <a href="#treat" class="hover:text-white">Conditions</a>
+          <a href="#services" class="hover:text-white">Services</a>
+          <a href="#book" class="hover:text-white">Appointments</a>
+          <a href="/kn/" class="hover:text-white">ಕನ್ನಡ</a>
+        </nav>
+        <div class="grid gap-3">
+          <p class="text-sm text-brand-200">© <span id="year"></span> Banashree Ortho & Trauma Care, Davanagere</p>
+          <p class="text-sm text-brand-200">
+            Developed and maintained by
+            <a href="https://sidtech.in" target="_blank" rel="noopener"
+              class="font-semibold text-white hover:text-accent-300 transition">
+              SidTech
+            </a>
+          </p>
+        </div>
       </div>
-      <nav class="grid gap-2 text-brand-200">
-        <a href="#treat" class="hover:text-white">Conditions</a>
-        <a href="#services" class="hover:text-white">Services</a>
-        <a href="#book" class="hover:text-white">Appointments</a>
-        <a href="/kn/" class="hover:text-white">ಕನ್ನಡ</a>
-      </nav>
-      <div class="grid gap-3">
-        <p class="text-sm text-brand-200">© <span id="year"></span> Banashree Ortho & Trauma Care, Davanagere</p>
-        <p class="text-sm text-brand-200">
-          Developed and maintained by 
-          <a href="https://sidtech.in" target="_blank" rel="noopener" 
-            class="font-semibold text-white hover:text-accent-300 transition">
-            SidTech
-          </a>
-        </p>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="fixed inset-x-0 bottom-0 z-50 md:hidden bg-white/95 backdrop-blur border-t border-slate-200">
+      <div class="container mx-auto px-4 py-3 grid grid-cols-3 gap-3">
+        <a href="#book"
+          class="inline-flex items-center justify-center rounded-xl2 bg-brand-700 text-white py-2">Book</a>
+        <a id="cta-call" href="tel:+917204493794"
+          class="inline-flex items-center justify-center rounded-xl2 border border-slate-300">Call</a>
+        <a id="cta-wa" href="https://wa.me/917204493794"
+          class="inline-flex items-center justify-center rounded-xl2 border border-slate-300">WhatsApp</a>
       </div>
     </div>
-  </footer>
 
-  <!-- Sticky Mobile CTA -->
-  <div class="fixed inset-x-0 bottom-0 z-50 md:hidden bg-white/95 backdrop-blur border-t border-slate-200">
-    <div class="container mx-auto px-4 py-3 grid grid-cols-3 gap-3">
-      <a href="#book" class="inline-flex items-center justify-center rounded-xl2 bg-brand-700 text-white py-2">Book</a>
-      <a id="cta-call" href="tel:+917204493794" class="inline-flex items-center justify-center rounded-xl2 border border-slate-300">Call</a>
-      <a id="cta-wa" href="https://wa.me/917204493794" class="inline-flex items-center justify-center rounded-xl2 border border-slate-300">WhatsApp</a>
-    </div>
-  </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/917204493794" target="_blank"
+      class="hidden md:inline-flex fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 p-4 rounded-full shadow-lg hover:shadow-xl transition"
+      style="background-color:#25D366;">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 2C6.48 2 2 6.05 2 11.1c0 1.86.53 3.58 1.45 5.05L2 22l6.1-1.92A10.6 10.6 0 0012 20.2c5.52 0 10-4.05 10-9.1S17.52 2 12 2zm0 16.8c-1.56 0-3.05-.43-4.36-1.24l-.31-.19-3.62 1.14 1.18-3.48-.21-.33a8.12 8.12 0 01-1.27-4.19c0-4.24 3.67-7.7 8.18-7.7s8.18 3.46 8.18 7.7-3.67 7.7-8.18 7.7z" />
+        <path
+          d="M17.12 13.76c-.28-.14-1.67-.82-1.93-.91-.26-.09-.45-.14-.64.14s-.74.91-.9 1.1c-.17.19-.33.21-.61.07-.28-.14-1.17-.43-2.23-1.38-.82-.74-1.38-1.64-1.55-1.92-.17-.28-.02-.43.13-.57.13-.12.28-.33.42-.5.14-.17.19-.28.28-.47.09-.19.04-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36s-.99.97-.99 2.36.99 2.74 1.13 2.93c.14.19 1.95 3.18 4.73 4.34.66.29 1.18.46 1.58.59.66.21 1.26.18 1.74.11.53-.08 1.67-.68 1.9-1.33.24-.65.24-1.21.17-1.33-.07-.12-.25-.19-.53-.33z" />
+      </svg>
+    </a>
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
 
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/917204493794" target="_blank"
-     class="hidden md:inline-flex fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 p-4 rounded-full shadow-lg hover:shadow-xl transition"
-     style="background-color:#25D366;">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2C6.48 2 2 6.05 2 11.1c0 1.86.53 3.58 1.45 5.05L2 22l6.1-1.92A10.6 10.6 0 0012 20.2c5.52 0 10-4.05 10-9.1S17.52 2 12 2zm0 16.8c-1.56 0-3.05-.43-4.36-1.24l-.31-.19-3.62 1.14 1.18-3.48-.21-.33a8.12 8.12 0 01-1.27-4.19c0-4.24 3.67-7.7 8.18-7.7s8.18 3.46 8.18 7.7-3.67 7.7-8.18 7.7z"/><path d="M17.12 13.76c-.28-.14-1.67-.82-1.93-.91-.26-.09-.45-.14-.64.14s-.74.91-.9 1.1c-.17.19-.33.21-.61.07-.28-.14-1.17-.43-2.23-1.38-.82-.74-1.38-1.64-1.55-1.92-.17-.28-.02-.43.13-.57.13-.12.28-.33.42-.5.14-.17.19-.28.28-.47.09-.19.04-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36s-.99.97-.99 2.36.99 2.74 1.13 2.93c.14.19 1.95 3.18 4.73 4.34.66.29 1.18.46 1.58.59.66.21 1.26.18 1.74.11.53-.08 1.67-.68 1.9-1.33.24-.65.24-1.21.17-1.33-.07-.12-.25-.19-.53-.33z"/>
-    </svg>
-  </a>
-</body>
+      btn?.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+
+      // close menu after clicking a link (nice on mobile)
+      menu?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("appointment-form");
+        const container = document.getElementById("appointment-container");
+        const successBox = document.getElementById("appointment-success");
+        const bookAgain = document.getElementById("book-again");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const formData = new FormData(form);
+
+          try {
+            const response = await fetch(form.action, {
+              method: form.method,
+              body: formData,
+              headers: { Accept: "application/json" },
+            });
+
+            if (response.ok) {
+              form.classList.add("hidden");
+              successBox.classList.remove("hidden");
+            } else {
+              alert("Something went wrong. Please try again.");
+            }
+          } catch (err) {
+            alert("Network error. Please check your connection.");
+          }
+        });
+
+        bookAgain.addEventListener("click", () => {
+          form.reset();
+          successBox.classList.add("hidden");
+          form.classList.remove("hidden");
+          form.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    </script>
+
+  </body>
+
 </html>
