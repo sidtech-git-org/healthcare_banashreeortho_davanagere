@@ -1,25 +1,81 @@
 <!doctype html>
 <html lang="kn" class="scroll-smooth">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ಬನಶ್ರೀ ಅಸ್ಥಿ & ಟ್ರಾಮಾ ಕೇರ್ | Davanagere</title>
-  <meta name="description" content="ಬನಶ್ರೀ Ortho & Trauma Care — ದಾವಣಗೆರೆಯಲ್ಲಿ ಮೂಳೆ-ಸಂಧಿ ಚಿಕಿತ್ಸೆ, ಫಿಸಿಯೋಥೆರಪಿ, ಡಿಜಿಟಲ್ ಎಕ್ಸ್-ರೆ ಮತ್ತು ಫಾರ್ಮಸಿ." />
+  <title>ಬನಶ್ರೀ ಅಸ್ಥಿ & ಟ್ರಾಮಾ ಕೇರ್ | ದಾವಣಗೆರೆ</title>
+  <meta name="description"
+    content="ಬನಶ್ರೀ ಅಸ್ಥಿ & ಟ್ರಾಮಾ ಕೇರ್ — ದಾವಣಗೆರೆಯಲ್ಲಿರುವ ಸಮರ್ಪಿತ ಅಸ್ಥಿ, ಫಿಸಿಯೋ, ಡಿಜಿಟಲ್ X-ray ಹಾಗೂ ಮೆಡಿಕಲ್ ಶಾಪ್ ಸೌಲಭ್ಯ ಇರುವ ಕೇಂದ್ರ." />
+
+  <!-- same offsets as English -->
+  <style>
+    :root {
+      --stick-height: 4rem;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--stick-height);
+    }
+
+    .scroll-tight {
+      scroll-margin-top: var(--stick-height);
+    }
+
+    .scroll-hero {
+      scroll-margin-top: calc(var(--stick-height) + 1.4rem);
+    }
+
+    @media (min-width: 1024px) {
+      :root {
+        --stick-height: 5.1rem;
+      }
+    }
+  </style>
+  <style>
+    /* make all section anchors stop below sticky header */
+    #about,
+    #services,
+    #physio,
+    #why,
+    #book,
+    #contact {
+      scroll-margin-top: 4rem;
+    }
+  </style>
+  <style>
+    /* consistent vertical spacing */
+    section {
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
+    }
+
+    #about {
+      padding-top: 2rem !important;
+    }
+
+    #why,
+    .why-choose {
+      margin-top: 0 !important;
+    }
+  </style>
 
   <!-- Fonts & Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Plus Jakarta Sans','ui-sans-serif','system-ui','sans-serif'] },
+          fontFamily: { sans: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
           colors: {
-            brand: { 950:'#042f2e',900:'#064e3b',800:'#0f4f47',700:'#0f766e',600:'#0ea5a4',500:'#14b8a6',400:'#2dd4bf',300:'#5eead4',200:'#99f6e4',100:'#ccfbf1',50:'#ecfeff' },
-            accent:{ 900:'#7a3b06',800:'#8a4b0a',700:'#a16207',600:'#ca8a04',500:'#eab308',400:'#facc15',300:'#fde047',200:'#fef08a',100:'#fef9c3',50:'#fffbeb' },
-            stonebg:{ 50:'#f7f8f9',100:'#f1f5f4' }
+            brand: { 950: '#042f2e', 900: '#064e3b', 800: '#0f4f47', 700: '#0f766e', 600: '#0ea5a4', 500: '#14b8a6', 400: '#2dd4bf', 300: '#5eead4', 200: '#99f6e4', 100: '#ccfbf1', 50: '#ecfeff' },
+            accent: { 900: '#7a3b06', 800: '#8a4b0a', 700: '#a16207', 600: '#ca8a04', 500: '#eab308', 400: '#facc15', 300: '#fde047', 200: '#fef08a', 100: '#fef9c3', 50: '#fffbeb' },
+            stonebg: { 50: '#f7f8f9', 100: '#f1f5f4' }
           },
           boxShadow: { lift: '0 14px 40px rgba(4,47,46,0.12)' },
           borderRadius: { xl2: '1.25rem' }
@@ -28,330 +84,344 @@
     }
   </script>
   <style>
-    body{ text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased }
-    .container{ max-width: 1120px }
+    body {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased
+    }
+
+    .container {
+      max-width: 1120px
+    }
+
     .bg-dots {
-      background-image: radial-gradient(rgba(14,165,164,0.12) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(14, 165, 164, 0.12) 1px, transparent 1px);
       background-size: 22px 22px;
       background-position: 0 0;
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
+
 <body class="bg-stonebg-50 text-slate-800 pb-24 md:pb-0">
-  <!-- Language Toggle (to English) -->
-  <div class="hidden md:block fixed top-[calc(env(safe-area-inset-top)+12px)] right-4 z-[100] pointer-events-auto max-w-[220px] text-right leading-snug">
-    <a href="/"
-       class="font-bold text-base md:text-lg bg-gradient-to-r from-[#0ea5a4] to-[#eab308] bg-clip-text text-transparent hover:opacity-90 transition">
-      Click here for English
-    </a>
-  </div>
-ಕನ್ನಡದಲ್ಲಿ ವ್ಯವಹರಿಸಲು ಇಲ್ಲಿ ಒತ್ತಿ
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-    <div class="container mx-auto px-4 py-3">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-        <div class="flex items-center gap-3">
-          <img src="../assets/img/banashree_logo.png" alt="Banashree Ortho & Trauma logo" class="h-14 w-auto">
-          <div>
-            <p class="text-3xl md:text-4xl leading-tight font-extrabold tracking-tight text-brand-800 notranslate">
-              ಬನಶ್ರೀ Ortho & Trauma Care
-            </p>
-            <p class="text-sm font-semibold text-slate-600">ದಾವಣಗೆರೆ, ಕರ್ನಾಟಕ</p>
-          </div>
+
+  <!-- TOP BAR -->
+  <div class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <header class="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/img/banashree_logo.png" alt="Banashree Ortho & Trauma Care"
+          class="h-10 w-10 rounded-md object-contain">
+        <div>
+          <h1 class="text-2xl md:text-3xl font-extrabold text-brand-900 leading-tight">
+            ಬನಶ್ರೀ ಅಸ್ಥಿ & ಟ್ರಾಮಾ ಕೇರ್
+          </h1>
+          <p class="text-sm md:text-lg text-slate-500 -mt-1">ದಾವಣಗೆರೆ, ಕರ್ನಾಟಕ</p>
         </div>
       </div>
 
-      <!-- Navigation -->
-      <nav class="mt-4 text-base md:text-lg font-bold text-slate-800">
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4 md:flex md:flex-wrap md:justify-between md:items-center">
-          <a href="#services" class="px-6 py-3 rounded-xl2 bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 shadow-sm hover:from-accent-200 hover:to-accent-100 hover:shadow-md transition text-center"> ಅಸ್ಥಿ ಚಿಕಿತ್ಸೆಗಳು </a>
-          <a href="#physio" class="px-6 py-3 rounded-xl2 bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 shadow-sm hover:from-accent-200 hover:to-accent-100 hover:shadow-md transition text-center"> ಭೌತಿಕ ಚಿಕಿತ್ಸೆಗಳು </a>
-          <a href="#contact" class="px-6 py-3 rounded-xl2 bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 shadow-sm hover:from-accent-200 hover:to-accent-100 hover:shadow-md transition text-center"> ಸಂಪರ್ಕ </a>
-          <a href="#book" class="px-6 py-3 rounded-xl2 bg-gradient-to-r from-brand-100 to-brand-50 text-brand-900 shadow-sm hover:from-brand-200 hover:to-brand-100 hover:shadow-md transition text-center"> ಅಪಾಯಿಂಟ್ಮೆಂಟ್ ಬುಕ್ ಮಾಡಿ </a>
+      <div class="flex items-center gap-3">
+        <!-- on Kannada page we point to English -->
+        <a href="/"
+          class="hidden md:inline-block text-sm md:text-base font-bold bg-gradient-to-r from-[#0ea5a4] to-[#eab308] bg-clip-text text-transparent">
+          View in English
+        </a>
+
+        <button id="mobile-menu-btn"
+          class="md:hidden inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-200 text-brand-900 font-semibold shadow-sm border border-amber-300">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+          <span>ಮೆನು</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- desktop pills -->
+    <nav class="hidden md:block">
+      <div class="container mx-auto px-4 pb-2">
+        <div class="flex gap-3 justify-between items-center">
+          <a href="#about"
+            class="flex-1 text-center px-3 py-2 rounded-[1.3rem] bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 text-[0.95rem] font-bold shadow-sm hover:shadow-md transition">
+            ನಮ್ಮ ಬಗ್ಗೆ
+          </a>
+          <a href="#services"
+            class="flex-1 text-center px-3 py-2 rounded-[1.3rem] bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 text-[0.95rem] font-bold shadow-sm hover:shadow-md transition">
+            ಅಸ್ಥಿ ಸೇವೆಗಳು
+          </a>
+          <a href="#physio"
+            class="flex-[1.15] text-center px-3 py-2 rounded-[1.3rem] bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 text-[0.95rem] font-bold shadow-sm hover:shadow-md transition whitespace-nowrap">
+            ಫಿಸಿಯೋಥೆರಪಿ ಸೇವೆಗಳು
+          </a>
+          <a href="#why"
+            class="flex-1 text-center px-3 py-2 rounded-[1.3rem] bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 text-[0.95rem] font-bold shadow-sm hover:shadow-md transition">
+            ಏಕೆ ನಮ್ಮನ್ನು ಆಯ್ಕೆ?
+          </a>
+          <a href="#contact"
+            class="flex-1 text-center px-3 py-2 rounded-[1.3rem] bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 text-[0.95rem] font-bold shadow-sm hover:shadow-md transition">
+            ಸಂಪರ್ಕ
+          </a>
+          <a href="#book"
+            class="flex-1 text-center px-3 py-2 rounded-[1.3rem] bg-gradient-to-r from-accent-100 to-accent-50 text-brand-900 text-[0.95rem] font-bold shadow-sm hover:shadow-md transition">
+            ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಬುಕ್
+          </a>
         </div>
-      </nav>
-    </div>
-  </header>
+      </div>
+    </nav>
 
-  <!-- Hero / Doctor Introduction -->
-  <section class="relative bg-dots pt-4">
+    <!-- mobile dropdown -->
+    <nav id="mobile-menu" class="md:hidden hidden border-t border-slate-200 bg-white/95 backdrop-blur">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="#about" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">ನಮ್ಮ ಬಗ್ಗೆ</a>
+        <a href="#services" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">ಅಸ್ಥಿ ಸೇವೆಗಳು</a>
+        <a href="#physio" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">ಫಿಸಿಯೋಥೆರಪಿ ಸೇವೆಗಳು</a>
+        <a href="#why" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">ಏಕೆ ನಮ್ಮನ್ನು ಆಯ್ಕೆ?</a>
+        <a href="#contact" class="block px-4 py-2 rounded-lg bg-amber-50 text-brand-900 font-semibold">ಸಂಪರ್ಕ</a>
+        <a href="#book" class="block px-4 py-2 rounded-lg bg-teal-50 text-brand-900 font-semibold">ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಬುಕ್</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section id="about" class="scroll-hero relative bg-white">
     <div class="absolute inset-x-0 -top-8 h-20 bg-gradient-to-b from-brand-50 to-transparent pointer-events-none"></div>
-    <div class="container mx-auto px-4 py-10 grid lg:grid-cols-2 gap-10 items-center">
-
-      <!-- Left: Doctor -->
+    <div class="container mx-auto px-4 py-8 grid lg:grid-cols-2 gap-10 items-center">
       <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
-        <img src="../assets/img/dr.shivashankarappa.png" alt="ಡಾ. ಶಿವಶಂಕರಪ್ಪ, Orthopaedic Specialist" class="h-48 w-48 rounded-full shadow-lift ring-2 ring-brand-100 mb-6 object-cover">
+        <img src="assets/img/dr.shivashankarappa.png" alt="Dr. Shivashankarappa"
+          class="h-48 w-48 rounded-full shadow-lift ring-2 ring-brand-100 mb-6 object-cover">
         <h1 class="text-2xl md:text-3xl font-extrabold leading-tight text-brand-900">
-          ಡಾ. ಶಿವಶಂಕರಪ್ಪ A.
+          ಡಾ. ಶಿವಶಂಕರಪ್ಪ
         </h1>
-        <p class="text-slate-600 font-medium">Founder & Chief Orthopaedic Surgeon</p>
+        <p class="text-slate-600 font-medium">ಸ್ಥಾಪಕ & ಮುಖ್ಯ ಅಸ್ಥಿ ತಜ್ಞ</p>
         <p class="mt-4 text-lg text-slate-700 max-w-xl">
-          “<span class="font-semibold text-brand-800">ಬನಶ್ರೀ Ortho & Trauma Centre</span> ನಲ್ಲಿ,
-          ದಾವಣಗೆರೆಯಲ್ಲಿ ಉತ್ತಮ Orthopaedic ಮತ್ತು Physiotherapy ಸೇವೆಗಳನ್ನು ನನ್ನ ಅನುಭವದೊಂದಿಗೆ ನೀಡುತ್ತೇವೆ.
-          Patient-first ನಿಲುವು, ಕಡಿಮೆ ನಿರೀಕ್ಷಾ ಸಮಯ, ವಿಶ್ವಾಸಾರ್ಹ ಚಿಕಿತ್ಸೆಯೇ ನಮ್ಮ ಗುರಿ.”
+          “<span class="font-semibold text-brand-800">ಬನಶ್ರೀ ಅಸ್ಥಿ & ಟ್ರಾಮಾ ಕೇರ್</span>ನಲ್ಲಿ ನಾವು
+          ಹಡದಿ, ಸಂಯೋಜಕ, ನೋವು ಹಾಗೂ ಫಿಸಿಯೋ ಚಿಕಿತ್ಸೆಯನ್ನು ಒಂದೇ ಕಡೆ ಕೊಡುತ್ತಿದ್ದೇವೆ.
+          ನಿಮ್ಮ ಚೇತರಿಕೆಗೆ ಬೇಕಾದದ್ದು ಎಲ್ಲವೂ ಇಲ್ಲಿ ಸಿಗುತ್ತದೆ.”
         </p>
       </div>
-
-      <!-- Right: Hospital board image -->
       <div class="relative">
         <div class="rounded-[2rem] overflow-hidden ring-1 ring-slate-200 shadow-lift">
-          <img src="../assets/img/hospital_building.jpg" alt="Banashree Ortho Hospital Board"
-               class="w-full h-[380px] object-contain object-center bg-white p-2 rounded-[1.5rem]" loading="eager">
+          <img src="assets/img/hospital_building.jpg" alt="Banashree Ortho Hospital Building"
+            class="w-full h-[380px] object-contain object-center bg-white p-2 rounded-[1.5rem]" loading="eager">
         </div>
       </div>
     </div>
   </section>
 
   <!-- Orthopaedic Services -->
-  <section id="services" class="bg-white border-y border-slate-200">
-    <div class="container mx-auto px-4 py-16">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900">ಅಸ್ಥಿ ಚಿಕಿತ್ಸೆಗಳು (Orthopaedic Services)</h2>
-      <p class="mt-2 text-slate-600 max-w-2xl">ಫ್ರ್ಯಾಕ್ಚರ್-ಕೇರ್, ಜೋಲು-ಸಂಧಿ ನೋವು ಚಿಕಿತ್ಸೆಯೊಂದಿಗೆ ಅಗತ್ಯ ಸೌಲಭ್ಯಗಳು ಒಂದೇ ಕಡೆ.</p>
+  <section class="bg-white">
+    <div id="services" class="scroll-tight container mx-auto px-4 py-5">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900">ಅಸ್ಥಿ ಚಿಕಿತ್ಸಾ ಸೇವೆಗಳು</h2>
+      <p class="mt-2 text-slate-600 max-w-2xl">
+        ಫ್ರ್ಯಾಕ್ಚರ್, ಜಾಯಿಂಟ್ ಪೇನ್, ಅಸ್ಥಿ ಸಂಬಂಧಿತ ಸಮಸ್ಯೆಗಳಿಗೆ ಸಮಗ್ರ ಚಿಕಿತ್ಸಾ ವ್ಯವಸ್ಥೆ.
+      </p>
 
-      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-700">
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-700">
         <ul class="list-disc list-inside space-y-2">
-          <li>Orthopaedic OPD & Minor Procedures</li>
-          <li>Fracture Care & Plaster / POP</li>
-          <li>Joint Pain & Arthritis Clinic</li>
-          <li>Post-operative Follow-up Care</li>
+          <li>Orthopaedic OPD & ಸಣ್ಣ ಪ್ರೊಸೀಜರ್‌ಗಳು</li>
+          <li>Fracture care & POP / ಪ್ಲಾಸ್ಟರ್</li>
+          <li>Joint pain & arthritis ಕ್ಲಿನಿಕ್</li>
+          <li>ಶಸ್ತ್ರಚಿಕಿತ್ಸೆ ನಂತರದ ಫಾಲೋ-ಅಪ್</li>
         </ul>
-
         <ul class="list-disc list-inside space-y-2">
-          <li>Physiotherapy & Rehabilitation</li>
-          <li>Back & Neck Pain Management</li>
-          <li>Sports Injury Assessment</li>
-          <li>Posture & Gait Training</li>
+          <li>Physiotherapy & Rehabilitation ಸೇರಿಕೊಂಡ ಸೇವೆಗಳು</li>
+          <li>Back & Neck pain management</li>
+          <li>Sports injury assessment</li>
+          <li>Posture & gait training</li>
         </ul>
-
         <ul class="list-disc list-inside space-y-2">
-          <li>Digital X-Ray (In-house)</li>
-          <li>Medical Shop / Pharmacy</li>
-          <li>Basic Lab Tie-ups</li>
-          <li>Cashless & TPA Assistance (as applicable)</li>
+          <li>In-house Digital X-Ray</li>
+          <li>Medical shop / Pharmacy</li>
+          <li>Basic lab tie-ups</li>
+          <li>Cashless / TPA ಸಹಾಯ (ಲಭ್ಯವಿದ್ದರೆ)</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Physiotherapy Services -->
-  <section id="physio" class="bg-white border-y border-slate-200">
-    <div class="container mx-auto px-4 py-16">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900">ಭೌತಿಕ ಚಿಕಿತ್ಸೆ (Physiotherapy Services)</h2>
+  <!-- Physio -->
+  <section class="bg-white">
+    <div id="physio" class="scroll-tight container mx-auto px-4 py-5">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900">ಫಿಸಿಯೋಥೆರಪಿ ಸೇವೆಗಳು</h2>
       <p class="mt-2 text-slate-600 max-w-2xl">
-        Mobility ಪುನರ್ ಸ್ಥಾಪನೆ ಮತ್ತು ನೋವು ನಿರ್ವಹಣೆಗೆ ವೈಯಕ್ತಿಕಗೊಳಿಸಿದ ಪರಿಹಾರಗಳು.
+        ನೋವು ಕಡಿಮೆ ಮಾಡಲು, ಮೂಳೆ-ಸ್ನಾಯು ಹಾನಿಯಿಂದ ಚೇತರಿಸಿಕೊಳ್ಳಲು ಮತ್ತು ಚಲನೆ ಸುಧಾರಿಸಲು ರೂಪಿಸಿದ ಕಾರ್ಯಕ್ರಮಗಳು.
       </p>
 
-      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-700">
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-700">
         <ul class="list-disc list-inside space-y-2">
-          <li>Joint & muscle pain management</li>
+          <li>Joint / muscle pain management</li>
           <li>Post-operative rehabilitation</li>
-          <li>Back/Neck pain therapy</li>
+          <li>Back & neck pain therapy</li>
           <li>Sports injury recovery</li>
         </ul>
-
         <ul class="list-disc list-inside space-y-2">
-          <li>Gait & posture correction</li>
+          <li>Gait / posture correction</li>
           <li>Strength & conditioning programs</li>
-          <li>Electrotherapy / Ultrasound therapy</li>
-          <li>Heat & cold therapy</li>
+          <li>Electrotherapy / ultrasound</li>
+          <li>Heat / cold therapy</li>
         </ul>
-
         <ul class="list-disc list-inside space-y-2">
-          <li>Pediatric physiotherapy</li>
+          <li>Pediatric physio</li>
           <li>Neurological rehabilitation</li>
           <li>Balance & coordination training</li>
-          <li>Home exercise guidance</li>
+          <li>Home exercise guidance (ಮನೆಯಲ್ಲೇ ಮಾಡುವ ವ್ಯಾಯಾಮ)</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- Why Choose Us -->
-  <section class="container mx-auto px-4 py-16">
-    <div class="grid md:grid-cols-4 gap-6">
-      <div class="rounded-2xl bg-white border border-slate-200 p-6"><p class="text-3xl font-extrabold text-brand-800">Focused</p><p class="text-slate-600">Orthopaedics only</p></div>
-      <div class="rounded-2xl bg-white border border-slate-200 p-6"><p class="text-3xl font-extrabold text-brand-800">In-house</p><p class="text-slate-600">Physio & X-ray</p></div>
-      <div class="rounded-2xl bg-white border border-slate-200 p-6"><p class="text-3xl font-extrabold text-brand-800">Accessible</p><p class="text-slate-600">City-centre location</p></div>
-      <div class="rounded-2xl bg-white border border-slate-200 p-6"><p class="text-3xl font-extrabold text-brand-800">Care-first</p><p class="text-slate-600">Patient-centric approach</p></div>
+  <section id="why" class="container mx-auto px-4 pt-8 pb-10">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900 mb-6">
+      ಏಕೆ ನಮ್ಮನ್ನು ಆಯ್ಕೆ?
+    </h2>
+    <div class="grid md:grid-cols-4 gap-4">
+      <div class="rounded-2xl bg-white border border-slate-200 p-5">
+        <p class="text-2xl font-extrabold text-brand-800">ಅಸ್ಥಿ ಮಾತ್ರ</p>
+        <p class="text-slate-600">ಫೋಕಸ್‌ಡ್ ಸೇವೆ</p>
+      </div>
+      <div class="rounded-2xl bg-white border border-slate-200 p-5">
+        <p class="text-2xl font-extrabold text-brand-800">ಇನ್-ಹೌಸ್</p>
+        <p class="text-slate-600">Physio & X-ray ಇದೆ</p>
+      </div>
+      <div class="rounded-2xl bg-white border border-slate-200 p-5">
+        <p class="text-2xl font-extrabold text-brand-800">ಸಿಗುವ ಸ್ಥಳ</p>
+        <p class="text-slate-600">ನಗರ ಮಧ್ಯೆ ಕ್ಲಿನಿಕ್</p>
+      </div>
+      <div class="rounded-2xl bg-white border border-slate-200 p-5">
+        <p class="text-2xl font-extrabold text-brand-800">ಪೇಷೆಂಟ್-ಫಸ್ಟ್</p>
+        <p class="text-slate-600">ಸರಳ ಭಾಷೆಯ ಮಾರ್ಗದರ್ಶನ</p>
+      </div>
     </div>
   </section>
 
-  <!-- Appointment Form -->
-  <section id="book" class="container mx-auto px-4 pb-16">
-    <div class="rounded-[2rem] bg-white border border-slate-200 p-6 md:p-10 shadow-lift">
-      <h2 class="text-2xl md:text-3xl font-extrabold">ಅಪಾಯಿಂಟ್ಮೆಂಟ್ ಬುಕ್ ಮಾಡಿ</h2>
-      <p class="mt-2 text-slate-600">ನಿಮ್ಮ ವಿವರಗಳನ್ನು ನೀಡಿ — ನಮ್ಮ ತಂಡ ಕರೆಮಾಡುತ್ತದೆ.</p>
-      <form id="apptForm" class="mt-6 grid gap-4" action="https://formspree.io/f/manpavkj" method="POST" novalidate>
-        <div class="grid md:grid-cols-2 gap-4">
-          <label class="grid gap-1">
-            <span class="text-sm font-medium">ಹೆಸರು / Name</span>
-            <input required name="name" type="text"
-                  class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600"
-                  placeholder="Your name" />
-          </label>
+  <!-- Appointment + Contact -->
+  <section id="book" class="scroll-mt-24 container mx-auto px-4 pb-12 grid md:grid-cols-2 gap-8 items-start">
+    <div
+      class="max-w-xl rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-lift ring-1 ring-slate-100 p-6 md:p-8">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಬುಕ್ ಮಾಡಿ</h2>
+      <p class="mt-2 text-slate-600 text-base leading-relaxed">
+        ನಿಮ್ಮ ವಿವರ ಕಳಿಸಿದರೆ — ಸ್ಟಾಫ್ ನಿಮ್ಮನ್ನು ಕರೆಮಾಡುತ್ತಾರೆ.
+      </p>
+      <div id="appointment-container">
+        <form id="appointment-form" class="mt-6 grid gap-4" action="https://formspree.io/f/xzzjkjpy" method="POST">
+          <div class="grid md:grid-cols-2 gap-x-6 gap-y-4">
+            <label class="grid gap-1">
+              <span class="text-sm font-medium">ಹೆಸರು</span>
+              <input required name="name" type="text"
+                class="w-full rounded-xl2 border border-slate-300 bg-white/90 px-4 py-2 text-slate-900 placeholder-slate-400 focus:border-indigoe-600 focus:ring-indigoe-600"
+                placeholder="ನಿಮ್ಮ ಹೆಸರು" />
+            </label>
+
+            <label class="grid gap-1">
+              <span class="text-sm font-medium">ಫೋನ್</span>
+              <input required name="phone" type="tel" pattern="^[6-9][0-9]{9}$"
+                title="10 ಅಂಕೆಯ ಭಾರತ ಮொಬೈಲ್ ಸಂಖ್ಯೆ" class="w-full rounded-xl2 border border-slate-300 bg-white/90 px-4 py-2 text-slate-900 placeholder-slate-400 focus:border-indigoe-600 focus:ring-indigoe-600"
+                placeholder="10 digit mobile" />
+            </label>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-x-6 gap-y-4">
+            <label class="grid gap-1">
+              <span class="text-sm font-medium">ವಿಭಾಗ</span>
+              <select name="department" required
+                class="rounded-xl2 border border-slate-300 bg-white/90 px-4 py-2 text-slate-900 placeholder-slate-400 focus:border-indigoe-600 focus:ring-indigoe-600">
+                <option value="" disabled selected>ವಿಭಾಗ ಆಯ್ಕೆ ಮಾಡಿ</option>
+                <option>ಅಸ್ಥಿ ಸಲಹೆ (Ortho)</option>
+                <option>ಫಿಸಿಯೋ ಸಲಹೆ</option>
+                <option>X-ray / ಇತರೆ</option>
+              </select>
+            </label>
+
+            <label class="grid gap-1">
+              <span class="text-sm font-medium">ದಿನಾಂಕ</span>
+              <input required name="date" type="date"
+                class="rounded-xl2 border border-slate-300 bg-white/90 px-4 py-2 text-slate-900 placeholder-slate-400 focus:border-indigoe-600 focus:ring-indigoe-600" />
+            </label>
+          </div>
 
           <label class="grid gap-1">
-            <span class="text-sm font-medium">ಫೋನ್ / Phone</span>
-            <input required name="phone" id="phone"
-                  inputmode="tel" autocomplete="tel"
-                  class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600"
-                  placeholder="+91 9XXXXXXXXX ಅಥವಾ 08192-XXXXXX" />
-            <small class="text-slate-500">+91, 10-digit mobile, ಅಥವಾ 0-STD landline ಅನುಮತಿಸಲಾಗಿದೆ.</small>
-            <p id="phoneError" class="hidden text-red-600 text-sm mt-1">
-              ಸರಿಯಾದ ಭಾರತೀಯ ಫೋನ್ ನಮೂದಿಸಿ (ಮೊಬೈಲ್ 10 ಅಂಕೆಗಳು 6–9 ರಿಂದ ಆರಂಭ / landline: 0 + STD + ಸಂಖ್ಯೆ).
-            </p>
+            <span class="text-sm font-medium">ಸಮಸ್ಯೆ / ಮೆಸೇಜ್</span>
+            <textarea name="message" rows="4"
+              class="rounded-xl2 border border-slate-300 bg-white/90 px-4 py-2 text-slate-900 placeholder-slate-400 focus:border-indigoe-600 focus:ring-indigoe-600"
+              placeholder="ಸ್ವಲ್ಪ ವಿವರ ಬರೆಯಿರಿ..."></textarea>
           </label>
+
+          <button
+            class="mt-4 inline-flex items-center justify-center gap-2 bg-brand-700 text-white px-6 py-3 rounded-xl2 font-semibold shadow-md hover:bg-brand-800 hover:shadow-lg transition">
+            Submit
+          </button>
+        </form>
+
+        <div id="appointment-success" class="hidden text-center py-12">
+          <p class="text-2xl font-bold text-green-700 mb-3">
+            ಧನ್ಯವಾದಗಳು! ನಿಮ್ಮ ವಿನಂತಿ ಸಕ್ಸಸ್ ಆಗಿದೆ.
+          </p>
+          <p class="text-slate-700 mb-6">
+            ನಮ್ಮ ತಂಡ ಬೇಗನೆ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕ ಮಾಡುತ್ತದೆ.
+          </p>
+          <button id="book-again"
+            class="mt-4 inline-flex items-center justify-center gap-2 bg-brand-700 text-white px-6 py-3 rounded-xl2 font-semibold shadow-md hover:bg-brand-800 hover:shadow-lg transition">
+            ಮತ್ತೊಂದು ಬುಕ್ ಮಾಡಿ
+          </button>
         </div>
-
-        <div class="grid md:grid-cols-2 gap-4">
-          <label class="grid gap-1">
-            <span class="text-sm font-medium">Visit Type</span>
-            <select name="visit" class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600">
-              <option>Orthopaedic Consultation</option>
-              <option>Physiotherapy</option>
-              <option>X-ray</option>
-            </select>
-          </label>
-
-          <label class="grid gap-1">
-            <span class="text-sm font-medium">Preferred Date</span>
-            <input required name="date" id="date" type="date"
-                  class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600" />
-            <p id="dateError" class="hidden text-red-600 text-sm mt-1">
-              ಇಂದಿನಿಂದ ಮುಂದಿನ ದಿನಾಂಕವನ್ನು ಆಯ್ಕೆಮಾಡಿ (ಹಿಂದಿನ ದಿನಾಂಕ ಮಾನ್ಯವಲ್ಲ).
-            </p>
-          </label>
-        </div>
-
-        <label class="grid gap-1">
-          <span class="text-sm font-medium">ಸಂದೇಶ / Message</span>
-          <textarea name="message" rows="4"
-                    class="rounded-xl2 border-slate-300 focus:border-brand-600 focus:ring-brand-600"
-                    placeholder="Briefly describe your concern"></textarea>
-        </label>
-
-        <button class="mt-2 inline-flex items-center justify-center gap-2 bg-brand-700 text-white px-6 py-3 rounded-xl2 font-semibold hover:bg-brand-800">
-          Submit
-        </button>
-      </form>
-      <script>
-        // Set min date to today (no past dates)
-        (function setMinDate() {
-          const date = document.getElementById('date');
-          const t = new Date();
-          const pad = n => String(n).padStart(2,'0');
-          date.min = `${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}`;
-        })();
-
-        // Indian phone validation (mobile or landline)
-        function isValidIndianPhone(input) {
-          const raw = String(input || '');
-          const digits = raw.replace(/\D/g,'');
-          if (digits.length < 10 || /^(\d)\1+$/.test(digits)) return false;
-
-          // Mobile: +91 / 91 / 0 prefixes allowed; final 10 digits must start 6-9
-          let d = digits;
-          if (d.length === 12 && d.startsWith('91')) d = d.slice(2);
-          if (d.length === 11 && d.startsWith('0')) d = d.slice(1);
-          if (d.length === 10 && /^[6-9]\d{9}$/.test(d)) return true;
-
-          // Landline: 0 + STD (2–4) + number (6–8) => total 11–12 digits
-          if (/^0\d{10,11}$/.test(digits)) return true;
-
-          return false;
-        }
-
-        (function wireValidation() {
-          const form = document.getElementById('apptForm');
-          const phone = document.getElementById('phone');
-          const phoneErr = document.getElementById('phoneError');
-          const date = document.getElementById('date');
-          const dateErr = document.getElementById('dateError');
-
-          const show = el => el.classList.remove('hidden');
-          const hide = el => el.classList.add('hidden');
-
-          function validatePhoneField() {
-            const ok = isValidIndianPhone(phone.value);
-            if (!ok) {
-              show(phoneErr);
-              phone.classList.add('border-red-500','focus:border-red-600','focus:ring-red-600');
-            } else {
-              hide(phoneErr);
-              phone.classList.remove('border-red-500','focus:border-red-600','focus:ring-red-600');
-            }
-            return ok;
-          }
-
-          function validateDateField() {
-            if (!date.value) { show(dateErr); return false; }
-            const selected = new Date(date.value+'T00:00:00');
-            const today = new Date(); today.setHours(0,0,0,0);
-            const ok = selected >= today;
-            if (!ok) {
-              show(dateErr);
-              date.classList.add('border-red-500','focus:border-red-600','focus:ring-red-600');
-            } else {
-              hide(dateErr);
-              date.classList.remove('border-red-500','focus:border-red-600','focus:ring-red-600');
-            }
-            return ok;
-          }
-
-          phone.addEventListener('input', validatePhoneField);
-          date.addEventListener('change', validateDateField);
-
-          form.addEventListener('submit', e => {
-            const okPhone = validatePhoneField();
-            const okDate = validateDateField();
-            if (!(okPhone && okDate)) {
-              e.preventDefault(); // block submit
-              if (!okPhone) phone.focus(); else date.focus();
-            }
-          });
-        })();
-      </script>
+      </div>
     </div>
-  </section>
 
-  <!-- Contact & Map -->
-  <section id="contact" class="container mx-auto px-4 pb-24">
-    <div class="grid md:grid-cols-2 gap-10 items-start">
-      <div class="rounded-2xl bg-white border border-slate-200 p-6">
-        <h3 class="text-xl font-extrabold">ಸಂಪರ್ಕ</h3>
-        <ul class="mt-4 grid gap-3 text-slate-700">
-          <li class="flex gap-3"><span class="mt-0.5">📍</span> <span id="address">282/3, 4th main, 9th cross, beside Suchetana Hospital, P.J extension, Davanagere - 577002</span></li>
-          <li class="flex gap-3"><span>📞</span> <a class="underline decoration-brand-300 underline-offset-4" id="phone1" href="tel:+917204493794">+917204493794</a>
-          <li class="flex gap-3"><span>✉️</span> <a class="underline decoration-brand-300 underline-offset-4" id="email" href="mailto:care@banashreeortho.com">care@banashreeortho.com</a></li>
-          <li class="flex gap-3"><span>🕒</span> Orthopaedics: 12pm-2pm & 6pm-9pm • X-ray & Physio: 10am–6pm</li>
-        </ul>
-      </div>
-      <div class="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-lift">
-        <iframe title="Google Map" src="https://maps.google.com/maps?q=Davanagere&t=&z=14&ie=UTF8&iwloc=&output=embed" class="w-full h-80"></iframe>
-      </div>
+    <!-- Contact -->
+    <div id="contact"
+      class="scroll-tight rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-lift ring-1 ring-slate-100 p-6 md:p-8 min-h-[530px] flex flex-col">
+      <h3 class="text-2xl md:text-3xl font-extrabold mb-4 text-slate-900">ಸಂಪರ್ಕ</h3>
+      <ul class="grid gap-4 text-slate-700 text-base">
+        <li class="flex gap-3">
+          <span class="mt-0.5">📍</span>
+          <a
+            href="https://www.google.com/maps?q=282/3,+4th+main,+9th+cross,+beside+Suchetana+Hospital,+P.J+extension,+Davanagere+-+577002"
+            target="_blank" rel="noopener" title="Open in Google Maps"
+            class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700">
+            282/3, 4th main, 9th cross, beside Suchetana Hospital, P.J extension, Davanagere – 577002
+          </a>
+        </li>
+        <li class="flex gap-3">
+          <span>📞</span>
+          <a class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700"
+            href="tel:+917204493794">
+            +91 72044 93794
+          </a>
+        </li>
+        <li class="flex gap-3">
+          <span>✉️</span>
+          <a class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700"
+            href="mailto:care@banashreeortho.com">
+            care@banashreeortho.com
+          </a>
+        </li>
+        <li class="flex gap-3">
+          <span>🕒</span>
+          Ortho: 12pm–2pm & 6pm–9pm • X-ray / Physio: 10am–6pm
+        </li>
+      </ul>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-brand-900 text-white">
-    <div class="container mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
+    <div class="container mx-auto px-4 py-8 grid md:grid-cols-3 gap-8">
       <div>
-        <p class="text-xl font-extrabold">ಬನಶ್ರೀ Ortho & Trauma Care</p>
+        <p class="text-xl font-extrabold">ಬನಶ್ರೀ ಅಸ್ಥಿ & ಟ್ರಾಮಾ ಕೇರ್</p>
         <p class="mt-1 text-brand-200">Bones • Joints • Rehab</p>
       </div>
       <nav class="grid gap-2 text-brand-200">
-        <a href="#services" class="hover:text-white">ಅಸ್ಥಿ ಚಿಕಿತ್ಸೆಗಳು</a>
-        <a href="#physio" class="hover:text-white">ಭೌತಿಕ ಚಿಕಿತ್ಸೆಗಳು</a>
-        <a href="#book" class="hover:text-white">ಅಪಾಯಿಂಟ್ಮೆಂಟ್ ಬುಕ್</a>
+        <a href="#services" class="hover:text-white">ಅಸ್ಥಿ ಸೇವೆಗಳು</a>
+        <a href="#physio" class="hover:text-white">ಫಿಸಿಯೋ ಸೇವೆಗಳು</a>
+        <a href="#book" class="hover:text-white">ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್</a>
         <a href="/" class="hover:text-white">English</a>
       </nav>
       <div class="grid gap-3">
         <p class="text-sm text-brand-200">© <span id="year"></span> Banashree Ortho & Trauma Care, Davanagere</p>
         <p class="text-sm text-brand-200">
-          Developed by 
+          Developed & maintained by
           <a href="https://sidtech.in" target="_blank" rel="noopener"
-             class="font-semibold text-white hover:text-accent-300 transition">
+            class="font-semibold text-white hover:text-accent-300 transition">
             SidTech
           </a>
         </p>
@@ -359,24 +429,93 @@
     </div>
   </footer>
 
-  <!-- Sticky Mobile CTA -->
+  <!-- mobile bottom bar -->
   <div class="fixed inset-x-0 bottom-0 z-50 md:hidden bg-white/95 backdrop-blur border-t border-slate-200">
     <div class="container mx-auto px-4 py-3 grid grid-cols-3 gap-3">
       <a href="#book" class="inline-flex items-center justify-center rounded-xl2 bg-brand-700 text-white py-2">ಬುಕ್</a>
-      <a id="cta-call" href="tel:+917204493794" class="inline-flex items-center justify-center rounded-xl2 border border-slate-300">Call</a>
-      <a id="cta-wa" href="https://wa.me/917204493794" class="inline-flex items-center justify-center rounded-xl2 border border-slate-300">WhatsApp</a>
+      <a id="cta-call" href="tel:+917204493794"
+        class="inline-flex items-center justify-center rounded-xl2 border border-slate-300">Call</a>
+      <a id="cta-wa" href="https://wa.me/917204493794"
+        class="inline-flex items-center justify-center rounded-xl2 border border-slate-300">WhatsApp</a>
     </div>
   </div>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
 
-  <!-- Floating WhatsApp Button -->
+  <!-- floating WhatsApp -->
   <a href="https://wa.me/917204493794" target="_blank"
-     class="hidden md:inline-flex fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 p-4 rounded-full shadow-lg hover:shadow-xl transition"
-     style="background-color:#25D366;">
+    class="hidden md:inline-flex fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 p-4 rounded-full shadow-lg hover:shadow-xl transition"
+    style="background-color:#25D366;">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2C6.48 2 2 6.05 2 11.1c0 1.86.53 3.58 1.45 5.05L2 22l6.1-1.92A10.6 10.6 0 0012 20.2c5.52 0 10-4.05 10-9.1S17.52 2 12 2zm0 16.8c-1.56 0-3.05-.43-4.36-1.24l-.31-.19-3.62 1.14 1.18-3.48-.21-.33a8.12 8.12 0 01-1.27-4.19c0-4.24 3.67-7.7 8.18-7.7s8.18 3.46 8.18 7.7-3.67 7.7-8.18 7.7z"/><path d="M17.12 13.76c-.28-.14-1.67-.82-1.93-.91-.26-.09-.45-.14-.64.14s-.74.91-.9 1.1c-.17.19-.33.21-.61.07-.28-.14-1.17-.43-2.23-1.38-.82-.74-1.38-1.64-1.55-1.92-.17-.28-.02-.43.13-.57.13-.12.28-.33.42-.5.14-.17.19-.28.28-.47.09-.19.04-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36s-.99.97-.99 2.36.99 2.74 1.13 2.93c.14.19 1.95 3.18 4.73 4.34.66.29 1.18.46 1.58.59.66.21 1.26.18 1.74.11.53-.08 1.67-.68 1.9-1.33.24-.65.24-1.21.17-1.33-.07-.12-.25-.19-.53-.33z"/>
+      <path
+        d="M12 2C6.48 2 2 6.05 2 11.1c0 1.86.53 3.58 1.45 5.05L2 22l6.1-1.92A10.6 10.6 0 0012 20.2c5.52 0 10-4.05 10-9.1S17.52 2 12 2zm0 16.8c-1.56 0-3.05-.43-4.36-1.24l-.31-.19-3.62 1.14 1.18-3.48-.21-.33a8.12 8.12 0 01-1.27-4.19c0-4.24 3.67-7.7 8.18-7.7s8.18 3.46 8.18 7.7-3.67 7.7-8.18 7.7z" />
+      <path
+        d="M17.12 13.76c-.28-.14-1.67-.82-1.93-.91-.26-.09-.45-.14-.64.14s-.74.91-.9 1.1c-.17.19-.33.21-.61.07-.28-.14-1.17-.43-2.23-1.38-.82-.74-1.38-1.64-1.55-1.92-.17-.28-.02-.43.13-.57.13-.12.28-.33.42-.5.14-.17.19-.28.28-.47.09-.19.04-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36s-.99.97-.99 2.36.99 2.74 1.13 2.93c.14.19 1.95 3.18 4.73 4.34.66.29 1.18.46 1.58.59.66.21 1.26.18 1.74.11.53-.08 1.67-.68 1.9-1.33.24-.65.24-1.21.17-1.33-.07-.12-.25-.19-.53-.33z" />
     </svg>
   </a>
+
+  <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn?.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    menu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("appointment-form");
+      const successBox = document.getElementById("appointment-success");
+      const bookAgain = document.getElementById("book-again");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: { Accept: "application/json" },
+          });
+
+          if (response.ok) {
+            form.classList.add("hidden");
+            successBox.classList.remove("hidden");
+          } else {
+            alert("Something went wrong. Please try again.");
+          }
+        } catch (err) {
+          alert("Network error. Please check your connection.");
+        }
+      });
+
+      bookAgain?.addEventListener("click", () => {
+        form.reset();
+        successBox.classList.add("hidden");
+        form.classList.remove("hidden");
+        form.scrollIntoView({ behavior: "smooth" });
+      });
+
+      // date min
+      const dateInput = document.querySelector('input[name="date"]');
+      if (dateInput) {
+        const today = new Date();
+        const pad = n => String(n).padStart(2, '0');
+        const min = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
+        dateInput.min = min;
+      }
+    });
+  </script>
+
 </body>
+
 </html>
