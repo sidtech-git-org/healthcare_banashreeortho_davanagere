@@ -105,6 +105,21 @@
 
 <body class="bg-stonebg-50 text-slate-800 pb-24 md:pb-0">
 
+<!-- WORK IN PROGRESS NOTICE -->
+<div id="wip-banner"
+  class="relative z-[60] bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 border-b border-amber-300">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
+    <p class="text-sm md:text-base font-semibold text-amber-900">
+      ⚠️ ಈ ಪುಟ ಇನ್ನೂ ನಿರ್ಮಾಣ ಹಂತದಲ್ಲಿದೆ. ಉತ್ತಮ ಅನುಭವಕ್ಕಾಗಿ ದಯವಿಟ್ಟು ಕೆಲವು ದಿನಗಳ ನಂತರ ಈ ಪುಟವನ್ನು ಭೇಟಿ ಮಾಡಿ.
+    </p>
+    <button onclick="document.getElementById('wip-banner').remove()"
+      class="text-amber-900 hover:text-amber-700 font-bold text-xl leading-none"
+      aria-label="Close notice">
+      ×
+    </button>
+  </div>
+</div>
+
   <!-- TOP BAR -->
   <div class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
     <header class="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
