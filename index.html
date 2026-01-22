@@ -331,7 +331,55 @@
         <p class="text-2xl font-extrabold text-brand-800">Care-first</p>
         <p class="text-slate-600">Patient-centric approach</p>
       </div>
-    </div>
+      <!-- Why Choose Us Photos (inside same section) -->
+      <div class="mt-8">
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <h3 class="text-xl md:text-2xl font-extrabold text-brand-900">Clinic Photos</h3>
+          </div>
+        </div>
+
+        <!-- Clinic Photos Grid (aligned under heading + expanded wide) -->
+        <div class="mt-6">
+          <!-- This wrapper starts at the same left edge as the container text -->
+          <div class="w-[calc(100vw-2rem)] md:w-[calc(100vw-3rem)] lg:w-[calc(100vw-4rem)]">
+            <!-- Limit so it doesn't get too huge on ultra-wide screens -->
+            <div class="max-w-[1600px]">
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <figure class="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm">
+                  <img src="assets/img/chooseus/building1.webp" alt="Clinic Building - Banashree Ortho & Trauma Care"
+                    class="w-full aspect-[3/4] object-cover" loading="lazy">
+                  <figcaption class="px-4 py-3 text-base font-medium text-slate-700 text-center">
+                    Clinic Building
+                  </figcaption>
+                </figure>
+
+                <figure class="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm">
+                  <img src="assets/img/chooseus/consultation.webp" alt="Medical Shop"
+                    class="w-full aspect-[3/4] object-cover" loading="lazy">
+                  <figcaption class="px-4 py-3 text-base font-medium text-slate-700 text-center">
+                    Consultation section
+                  </figcaption>
+                </figure>
+
+                <figure class="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm">
+                  <img src="assets/img/chooseus/physiotherapy.webp" alt="Physiotherapy"
+                    class="w-full aspect-[3/4] object-cover" loading="lazy">
+                  <figcaption class="px-4 py-3 text-base font-medium text-slate-700 text-center">
+                    Physiotherapy facility
+                  </figcaption>
+                </figure>
+
+                <figure class="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm">
+                  <img src="assets/img/chooseus/xray.webp" alt="X-ray" class="w-full aspect-[3/4] object-cover"
+                    loading="lazy">
+                  <figcaption class="px-4 py-3 text-base font-medium text-slate-700 text-center">
+                    X-ray facility
+                  </figcaption>
+                </figure>
+
+              </div>
   </section>
 
   <!-- Appointment Form -->
@@ -562,7 +610,7 @@
     });
   </script>
 
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
