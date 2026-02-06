@@ -391,7 +391,7 @@
       <p class="mt-2 text-slate-600 text-base leading-relaxed"> Leave your details — our coordinator will call back.
       </p>
       <div id="appointment-container">
-        <form id="appointment-form" class="mt-6 grid gap-4" action="https://formspree.io/f/xzzjkjpy" method="POST">
+        <form id="appointment-form" class="mt-6 grid gap-4">
           <div class="grid md:grid-cols-2 gap-x-6 gap-y-4">
             <label class="grid gap-1">
               <span class="text-sm font-medium">Full Name</span>
@@ -577,44 +577,7 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("appointment-form");
-      const container = document.getElementById("appointment-container");
-      const successBox = document.getElementById("appointment-success");
-      const bookAgain = document.getElementById("book-again");
 
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        try {
-          const response = await fetch(form.action, {
-            method: form.method,
-            body: formData,
-            headers: { Accept: "application/json" },
-          });
-
-          if (response.ok) {
-            form.classList.add("hidden");
-            successBox.classList.remove("hidden");
-          } else {
-            alert("Something went wrong. Please try again.");
-          }
-        } catch (err) {
-          alert("Network error. Please check your connection.");
-        }
-      });
-
-      bookAgain.addEventListener("click", () => {
-        form.reset();
-        successBox.classList.add("hidden");
-        form.classList.remove("hidden");
-        form.scrollIntoView({ behavior: "smooth" });
-      });
-    });
-  </script>
 
   <script type="application/ld+json">
 {
@@ -639,6 +602,34 @@
 }
 </script>
 
+<script>
+document.getElementById("appointment-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = this.querySelector('[name="name"]').value;
+  const phone = this.querySelector('[name="phone"]').value;
+  const department = this.querySelector('[name="department"]').value;
+  const date = this.querySelector('[name="date"]').value;
+  const message = this.querySelector('[name="message"]').value;
+
+  const whatsappNumber = "7892146740"; // hospital WhatsApp number
+
+  const text = 
+`New Appointment Request 🏥
+Name: ${name}
+Phone: ${phone}
+Department: ${department}
+Preferred Date: ${date}
+Message: ${message || "Not provided"}`;
+
+  const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text);
+
+  window.open(url, "_blank");
+
+  // Optional: reset form after opening WhatsApp
+  this.reset();
+});
+</script>
 </body>
 
 </html>
