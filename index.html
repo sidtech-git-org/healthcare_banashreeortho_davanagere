@@ -460,11 +460,10 @@
         <ul class="grid gap-4 text-slate-700 text-base">
           <li class="flex gap-3">
             <span class="mt-0.5">📍</span>
-            <a href="https://www.google.com/maps?q=282/3,+4th+Main,+9th+Cross,+East+Main+Gate,+Beside+Suchetana+Hospital,+Opp+Vishwesharaiah+Park,+Prince+Jayachamaraja+Wodeyar,+Davanagere,+Karnataka+577002,+India"
+            <a href="https://maps.app.goo.gl/nwBj8Rd1ETERrFa39"
               target="_blank" rel="noopener" title="Open in Google Maps"
               class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700">
-              282/3, 4th main, 9th cross, beside Suchetana Hospital, opp. Vishwesharaiah Park, <br> P.J Extension,
-              Davanagere, Karnataka 577002, India
+              282/3,4th main,9th cross, East Main gate, beside suchetana hospital, opp. Vishwesharaiah park, Prince Jayachamaraja Wodeyar, Davanagere, Karnataka 577002
             </a>
 
 
@@ -475,13 +474,17 @@
             <a class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700" href="tel:+917204493794">
               +91 7204493794
             </a>
+            <span>📞</span>
+            <a class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700" href="tel:+917204493794">
+              +91 72044 93794
+            </a>
           </li>
 
           <li class="flex gap-3">
             <span>✉️</span>
             <a class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700"
-              href="mailto:care@banashreeortho.com">
-              banashreeorthodvg@gmail.com
+              href="mailto:banashreeortho@gmail.com">
+              banashreeortho@gmail.com
             </a>
           </li>
 
@@ -546,7 +549,7 @@
       <a href="#book" class="inline-flex items-center justify-center rounded-xl2 bg-brand-700 text-white py-2">Book</a>
       <a id="cta-call" href="tel:+917204493794"
         class="inline-flex items-center justify-center rounded-xl2 bg-emerald-500 text-white py-2">Call</a>
-      <a id="cta-wa" href="https://wa.me/917204493794"
+      <a id="cta-wa" href="https://wa.me/919480604676"
         class="inline-flex items-center justify-center rounded-xl2 bg-[#25D366] text-white py-2">WhatsApp</a>
     </div>
   </div>
@@ -554,7 +557,7 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
 
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/917204493794" target="_blank"
+  <a href="https://wa.me/919480604676" target="_blank"
     class="hidden md:inline-flex fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 p-4 rounded-full shadow-lg hover:shadow-xl transition"
     style="background-color:#25D366;">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -579,44 +582,7 @@
       });
     });
   </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("appointment-form");
-      const container = document.getElementById("appointment-container");
-      const successBox = document.getElementById("appointment-success");
-      const bookAgain = document.getElementById("book-again");
 
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        try {
-          const response = await fetch(form.action, {
-            method: form.method,
-            body: formData,
-            headers: { Accept: "application/json" },
-          });
-
-          if (response.ok) {
-            form.classList.add("hidden");
-            successBox.classList.remove("hidden");
-          } else {
-            alert("Something went wrong. Please try again.");
-          }
-        } catch (err) {
-          alert("Network error. Please check your connection.");
-        }
-      });
-
-      bookAgain.addEventListener("click", () => {
-        form.reset();
-        successBox.classList.add("hidden");
-        form.classList.remove("hidden");
-        form.scrollIntoView({ behavior: "smooth" });
-      });
-    });
-  </script>
 
   <script type="application/ld+json">
 {
@@ -641,6 +607,34 @@
 }
 </script>
 
+<script>
+document.getElementById("appointment-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = this.querySelector('[name="name"]').value;
+  const phone = this.querySelector('[name="phone"]').value;
+  const department = this.querySelector('[name="department"]').value;
+  const date = this.querySelector('[name="date"]').value;
+  const message = this.querySelector('[name="message"]').value;
+
+  const whatsappNumber = "9480604676"; // hospital WhatsApp number
+
+  const text = 
+`New Appointment Request 🏥
+Name: ${name}
+Phone: ${phone}
+Department: ${department}
+Preferred Date: ${date}
+Message: ${message || "Not provided"}`;
+
+  const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text);
+
+  window.open(url, "_blank");
+
+  // Optional: reset form after opening WhatsApp
+  this.reset();
+});
+</script>
 </body>
 
 </html>
