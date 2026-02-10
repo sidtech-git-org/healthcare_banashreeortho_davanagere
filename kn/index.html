@@ -419,10 +419,10 @@
       <ul class="grid gap-4 text-slate-700 text-base">
         <li class="flex gap-3">
           <span class="mt-0.5">📍</span>
-          <a href="https://www.google.com/maps?q=546/2,+5th+Main+Road,+Ram+%26+Co+Circle,+Behind+Ganesha+Temple,+P.J+Extension,+Davanagere+577002"
+            <a href="https://maps.app.goo.gl/nwBj8Rd1ETERrFa39"
             target="_blank" rel="noopener" title="Open in Google Maps"
             class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700">
-            546/2, 5th main road, Ram & Co circle, behind Ganesha temple, P.J Extension, Davanagere - 577002
+              282/3,4th main,9th cross, East Main gate, beside suchetana hospital, opp. Vishwesharaiah park, Prince Jayachamaraja Wodeyar, Davanagere, Karnataka 577002
           </a>
         </li>
         <li class="flex gap-3">
@@ -430,12 +430,16 @@
           <a class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700" href="tel:+917204493794">
             +91 94806 04676
           </a>
+            <span>📞</span>
+            <a class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700" href="tel:+917204493794">
+              +91 72044 93794
+            </a>
         </li>
         <li class="flex gap-3">
           <span>✉️</span>
           <a class="underline decoration-brand-300 underline-offset-4 hover:text-brand-700"
-            href="mailto:care@banashreeortho.com">
-            care@banashreeortho.com
+              href="mailto:banashreeortho@gmail.com">
+              banashreeortho@gmail.com
           </a>
         </li>
         <li class="flex gap-3">
@@ -491,8 +495,8 @@
 
   <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
 
-  <!-- floating WhatsApp -->
-  <a href="https://wa.me/917204493794" target="_blank"
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919480604676" target="_blank"
     class="hidden md:inline-flex fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 p-4 rounded-full shadow-lg hover:shadow-xl transition"
     style="background-color:#25D366;">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -564,6 +568,34 @@
       }
     });
   </script>
+  <script>
+document.getElementById("appointment-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = this.querySelector('[name="name"]').value;
+  const phone = this.querySelector('[name="phone"]').value;
+  const department = this.querySelector('[name="department"]').value;
+  const date = this.querySelector('[name="date"]').value;
+  const message = this.querySelector('[name="message"]').value;
+
+  const whatsappNumber = "9480604676"; // hospital WhatsApp number
+
+  const text = 
+`New Appointment Request 🏥
+Name: ${name}
+Phone: ${phone}
+Department: ${department}
+Preferred Date: ${date}
+Message: ${message || "Not provided"}`;
+
+  const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text);
+
+  window.open(url, "_blank");
+
+  // Optional: reset form after opening WhatsApp
+  this.reset();
+});
+</script>
 
 </body>
 
